@@ -6,6 +6,8 @@ from scrapegraphai.graphs import SmartScraperGraph
 import logging
 import os
 from dotenv import load_dotenv
+from sqlalchemy.orm import Session
+from .models import Scholarship
 
 # Load environment variables
 load_dotenv()
@@ -23,14 +25,13 @@ logging.basicConfig(
     ]
 )
 
-def scrape_site(site, retries=3):
-    """
-    Scrape the given site and handle retries if errors occur.
-    """
+def scrape_site(site, db: Session, retries=3):
+    """Scrape the given site and save the result to the database."""
     for attempt in range(retries):
         try:
             logging.info(f"Starting scraping process for {site} (Attempt {attempt+1})")
 
+            # Define the configuration for the scraping pipeline
             graph_config = {
                 "llm": {
                     "api_key": OPENAI_API_KEY,
@@ -42,27 +43,39 @@ def scrape_site(site, retries=3):
                 "browser_type": "playwright"
             }
 
-            # Create the scraper object and run it
+            # Create the SmartScraperGraph instance
             smart_scraper_graph = SmartScraperGraph(
                 prompt="List me all the master's scholarships available in Canada with their respective Program titles, Managed / Funded by, URLs, deadlines, and requirements.",
                 source=site,
                 config=graph_config
             )
 
+            # Run the pipeline to scrape data
             articles_data = smart_scraper_graph.run()
-            print("Articles Data:", articles_data)
 
-            # Save results
-            site_name = site.replace('https://', '').replace('.', '_')
-            with open(f'{site_name}_scholarships.json', 'w') as json_file:
-                json.dump(articles_data, json_file, indent=4)
+            # Save the result to the MySQL database
+            for article in articles_data:
+                # Create a new Scholarship entry
+                scholarship = Scholarship(
+                    program_title=article.get('program_title'),
+                    funded_by=article.get('funded_by'),
+                    url=article.get('url'),
+                    deadline=article.get('deadline'),
+                    requirements=article.get('requirements')
+                )
 
-            logging.info(f"Successfully scraped {site}")
-            break  # Break if successful
+                # Add the scholarship record to the session
+                db.add(scholarship)
+
+            # Commit the transaction to save data in the DB
+            db.commit()
+            
+            logging.info(f"Successfully scraped and saved data from {site}")
+            break  # Break out of the retry loop if successful
 
         except RequestException as e:
             logging.error(f"Request error while scraping {site} on attempt {attempt+1}: {e}")
-            time.sleep(random.uniform(1, 3))  # Adding delay to avoid IP blocks
+            time.sleep(random.uniform(1, 3))  # Delay before retry
 
         except Exception as e:
             logging.error(f"General error occurred while scraping {site}: {e}")
