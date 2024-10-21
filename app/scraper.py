@@ -55,9 +55,9 @@ def scrape_site(site, db: Session, retries=1):
             smart_scraper_graph = SmartScraperGraph(
             prompt=(
                     "List all the master's scholarships available in Canada with their "
-                    "respective Program titles, Managed/Funded by, URLs, deadlines, and requirements. "
+                    "respective Program titles, Managed/Funded by (optional), URLs, deadlines, and requirements(optional, list them as separate items). "
                     "Strictly respond **only** in valid JSON format with the following structure and nothing else: "
-                    "{ \"program_title\": \"string\", \"funded_by\": \"string\", \"url\": \"string\", \"deadline\": \"YYYY-MM-DD\", \"requirements\": \"string\" }. "
+                    "{ \"program_title\": \"string\", \"funded_by\": \"string\", \"url\": \"string\", \"deadline\": \"YYYY-MM-DD\", \"requirements\": [\"string1\", \"string2\", ...] }. "
                     "Do not include any extra text, explanations, or comments, just valid JSON."
                 ),
                 source=site,
