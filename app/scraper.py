@@ -27,13 +27,13 @@ logging.basicConfig(
 
 def parse_date(date_str):
     try:
-        # Parse the string date (e.g., 'October 31, 2024') to datetime object
-        return datetime.strptime(date_str, "%B %d, %Y").date()  # Converts to YYYY-MM-DD format
+        # Parse the string date in 'YYYY-MM-DD' format to a datetime object
+        return datetime.strptime(date_str, "%Y-%m-%d").date()  # Converts to YYYY-MM-DD format
     except ValueError as e:
         logging.error(f"Date parsing error: {e}")
         return None
 
-def scrape_site(site, db: Session, retries=3):
+def scrape_site(site, db: Session, retries=1):
     """Scrape the given site and save the result to the database."""
     for attempt in range(retries):
         try:
