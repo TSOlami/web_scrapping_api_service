@@ -82,3 +82,18 @@
 2024-10-21 15:45:44,545 - INFO - Added scholarship: CIBC Build Your Future Contest from https://yconic.com
 2024-10-21 15:45:44,546 - INFO - Added scholarship: LEO Your Voice Counts Scholarship from https://yconic.com
 2024-10-21 15:45:44,555 - INFO - Successfully scraped and saved data from https://yconic.com
+2024-10-21 16:12:44,424 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-10-21 16:12:44,651 - INFO - Starting scraping...
+2024-10-21 16:12:55,297 - INFO - Content scraped
+2024-10-21 16:13:08,654 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-21 16:13:08,731 - INFO - Scraped 8 scholarships from https://yconic.com
+2024-10-21 16:13:08,732 - INFO - Articles data: [{'program_title': 'Tangerine $35,000 Student Prize', 'funded_by': 'NA', 'url': 'https://tangerinescholarship.55rush.com?ref=yconicsite', 'deadline': '2024-10-31', 'requirements': []}, {'program_title': 'Embark $15,000 RESP Contest', 'funded_by': 'NA', 'url': 'https://yconic.55rush.com/embarkaward/', 'deadline': '2024-12-31', 'requirements': []}, {'program_title': 'Neo Deposit Days $25,000 Giveaway', 'funded_by': 'NA', 'url': 'https://neodepositdays.55rush.com/?ref=studentawards', 'deadline': '2025-04-30', 'requirements': []}, {'program_title': 'Goodwill Industries of Alberta Scholarship for GOOD', 'funded_by': 'NA', 'url': 'https://studentawards.com/scholarships/goodwill-scholarship-for-good/', 'deadline': '2024-10-18', 'requirements': []}, {'program_title': 'BMO Student Award', 'funded_by': 'NA', 'url': 'https://studentawards.com/scholarships/bmo-student-award/', 'deadline': '2025-01-31', 'requirements': []}, {'program_title': '99 Scholarships: Money for your passions, not your grades.', 'funded_by': 'NA', 'url': 'https://99scholarships.ca/?ref=yconic', 'deadline': '2024-10-31', 'requirements': []}, {'program_title': 'CIBC Build Your Future Contest', 'funded_by': 'NA', 'url': 'https://buildyourfuture.55rush.com/', 'deadline': '2024-10-31', 'requirements': []}, {'program_title': 'LEO Your Voice Counts Scholarship', 'funded_by': 'NA', 'url': 'https://yconic.55rush.com/leostudentaward', 'deadline': '2024-12-31', 'requirements': []}]
+2024-10-21 16:13:08,733 - INFO - Added scholarship: Tangerine $35,000 Student Prize from https://yconic.com
+2024-10-21 16:13:08,733 - INFO - Added scholarship: Embark $15,000 RESP Contest from https://yconic.com
+2024-10-21 16:13:08,734 - INFO - Added scholarship: Neo Deposit Days $25,000 Giveaway from https://yconic.com
+2024-10-21 16:13:08,734 - INFO - Added scholarship: Goodwill Industries of Alberta Scholarship for GOOD from https://yconic.com
+2024-10-21 16:13:08,734 - INFO - Added scholarship: BMO Student Award from https://yconic.com
+2024-10-21 16:13:08,734 - INFO - Added scholarship: 99 Scholarships: Money for your passions, not your grades. from https://yconic.com
+2024-10-21 16:13:08,734 - INFO - Added scholarship: CIBC Build Your Future Contest from https://yconic.com
+2024-10-21 16:13:08,734 - INFO - Added scholarship: LEO Your Voice Counts Scholarship from https://yconic.com
+2024-10-21 16:13:08,745 - INFO - Successfully scraped and saved data from https://yconic.com
