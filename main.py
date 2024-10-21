@@ -14,16 +14,16 @@ app = FastAPI()
 # List of websites to scrape
 websites = [
     "https://yconic.com",
-    "https://scholarshipscanada.com",
-    "https://www.scholarshipca.com/scholarships-in-canada-2025-2026-for-international-students",
-    "https://greatyop.com/destination/canada/",
-    "https://scholarshipscanada.com/Scholarships/FeaturedScholarships.aspx",
-    "https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng",
-    "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-state/canada-scholarships/",
-    "https://studentawards.com/scholarships/",
-    "https://opportunitydesk.org/2024/09/01/canada-scholarships/",
-    "https://scholarships360.org/scholarships/study-in-canada-scholarships/",
-    "https://scholartree.ca/scholarships/for/international-students"
+    # "https://scholarshipscanada.com",
+    # "https://www.scholarshipca.com/scholarships-in-canada-2025-2026-for-international-students",
+    # "https://greatyop.com/destination/canada/",
+    # "https://scholarshipscanada.com/Scholarships/FeaturedScholarships.aspx",
+    # "https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng",
+    # "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-state/canada-scholarships/",
+    # "https://studentawards.com/scholarships/",
+    # "https://opportunitydesk.org/2024/09/01/canada-scholarships/",
+    # "https://scholarships360.org/scholarships/study-in-canada-scholarships/",
+    # "https://scholartree.ca/scholarships/for/international-students"
 ]
 
 def run_scraper():
@@ -31,6 +31,19 @@ def run_scraper():
     with ThreadPoolExecutor(max_workers=3) as executor:
         db: Session = next(get_db())  # Create a DB session
         executor.map(lambda site: scrape_site(site, db), websites)
+
+@app.get("/")
+def read_root():
+    """Welcome message for the API."""
+    return {"message": "Welcome to the Scholarships API!"}
+
+@app.get("/health/")
+def health_check():
+    """Health check endpoint for the API."""
+    return {
+        "message": "API is healthy!",
+        "status": "ok"
+    }
 
 @app.get("/scholarships/", response_model=list[ScholarshipBase])
 def get_scholarships(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
