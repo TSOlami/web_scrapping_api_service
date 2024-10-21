@@ -45,13 +45,15 @@ def scrape_site(site, db: Session, retries=3):
 
             # Create the SmartScraperGraph instance
             smart_scraper_graph = SmartScraperGraph(
-                prompt="List me all the master's scholarships available in Canada with their respective Program titles, Managed / Funded by, URLs, deadlines, and requirements.",
+                prompt="List me all the master's scholarships available in Canada with their respective Program titles, Managed / Funded by, URLs, deadlines, and requirements. ONLY and ALWAYS reply in the json format { \"program_title\": \"string\", \"funded_by\": \"string\", \"url\": \"string\", \"deadline\": \"string\", \"requirements\": \"string\" }",
                 source=site,
                 config=graph_config
             )
 
             # Run the pipeline to scrape data
             articles_data = smart_scraper_graph.run()
+
+            logging.info(f"Scraped {len(articles_data)} scholarships from {site}")
 
             # Save the result to the MySQL database
             for article in articles_data:
@@ -66,6 +68,7 @@ def scrape_site(site, db: Session, retries=3):
 
                 # Add the scholarship record to the session
                 db.add(scholarship)
+                logging.info(f"Added scholarship: {scholarship.program_title} from {site}")
 
             # Commit the transaction to save data in the DB
             db.commit()
