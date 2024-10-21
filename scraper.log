@@ -323,3 +323,45 @@
 2024-10-14 16:32:40,120 - INFO - Retrying request to /chat/completions in 0.397595 seconds
 2024-10-14 16:32:41,225 - INFO - Retrying request to /chat/completions in 0.819006 seconds
 2024-10-14 16:32:42,758 - ERROR - General error occurred while scraping https://scholartree.ca/scholarships/for/international-students: Connection error.
+2024-10-21 13:57:13,809 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-10-21 13:57:14,085 - INFO - Starting scraping...
+2024-10-21 13:57:15,021 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-10-21 13:57:15,070 - INFO - Starting scraping...
+2024-10-21 13:57:19,997 - INFO - Content scraped
+2024-10-21 13:57:20,252 - INFO - Content scraped
+2024-10-21 13:57:27,308 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-21 13:57:27,311 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-21 13:57:27,376 - INFO - Scraped 5 scholarships from https://yconic.com
+2024-10-21 13:57:27,376 - INFO - Scraped 5 scholarships from https://yconic.com
+2024-10-21 13:57:27,377 - ERROR - General error occurred while scraping https://yconic.com: 'str' object has no attribute 'get'
+2024-10-21 13:57:27,377 - ERROR - General error occurred while scraping https://yconic.com: 'str' object has no attribute 'get'
+2024-10-21 14:12:25,286 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-10-21 14:12:25,564 - INFO - Starting scraping...
+2024-10-21 14:12:30,398 - INFO - Content scraped
+2024-10-21 14:12:33,432 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-21 14:12:33,451 - INFO - Scraped 5 scholarships from https://yconic.com
+2024-10-21 14:12:33,451 - INFO - Articles data: {'program_title': 'Tangerine $35,000 Student Prize', 'funded_by': 'Tangerine. Forward Banking.', 'url': 'https://tangerinescholarship.55rush.com?ref=yconicsite', 'deadline': 'October 31, 2024', 'requirements': '$35,000'}
+2024-10-21 14:12:33,451 - ERROR - Invalid response format from https://yconic.com
+2024-10-21 14:12:33,452 - ERROR - Invalid response format from https://yconic.com
+2024-10-21 14:12:33,452 - ERROR - Invalid response format from https://yconic.com
+2024-10-21 14:12:33,452 - ERROR - Invalid response format from https://yconic.com
+2024-10-21 14:12:33,452 - ERROR - Invalid response format from https://yconic.com
+2024-10-21 14:12:33,453 - INFO - Successfully scraped and saved data from https://yconic.com
+2024-10-21 14:15:51,295 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-10-21 14:15:51,524 - INFO - Starting scraping...
+2024-10-21 14:15:57,255 - INFO - Content scraped
+2024-10-21 14:16:00,283 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-21 14:16:00,330 - INFO - Scraped 5 scholarships from https://yconic.com
+2024-10-21 14:16:00,330 - INFO - Articles data: {'program_title': 'Tangerine $35,000 Student Prize', 'funded_by': 'Tangerine. Forward Banking.', 'url': 'https://tangerinescholarship.55rush.com?ref=yconicsite', 'deadline': 'October 31, 2024', 'requirements': '$35,000'}
+2024-10-21 14:16:00,330 - ERROR - Expected a dictionary but got: program_title
+2024-10-21 14:29:16,745 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-10-21 14:29:17,013 - INFO - Starting scraping...
+2024-10-21 14:29:22,064 - INFO - Content scraped
+2024-10-21 14:29:25,313 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-21 14:29:25,388 - INFO - Scraped 5 scholarships from https://yconic.com
+2024-10-21 14:29:25,389 - INFO - Articles data: {'program_title': 'Tangerine $35,000 Student Prize', 'funded_by': 'Tangerine. Forward Banking.', 'url': 'https://tangerinescholarship.55rush.com?ref=yconicsite', 'deadline': 'October 31, 2024', 'requirements': '$35,000'}
+2024-10-21 14:29:25,395 - INFO - Added scholarship: Tangerine $35,000 Student Prize from https://yconic.com
+2024-10-21 14:29:25,405 - ERROR - General error occurred while scraping https://yconic.com: (pymysql.err.OperationalError) (1292, "Incorrect datetime value: 'October 31, 2024' for column `scraper_db`.`scholarships`.`deadline` at row 1")
+[SQL: INSERT INTO scholarships (program_title, funded_by, url, deadline, requirements) VALUES (%(program_title)s, %(funded_by)s, %(url)s, %(deadline)s, %(requirements)s)]
+[parameters: {'program_title': 'Tangerine $35,000 Student Prize', 'funded_by': 'Tangerine. Forward Banking.', 'url': 'https://tangerinescholarship.55rush.com?ref=yconicsite', 'deadline': 'October 31, 2024', 'requirements': '$35,000'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
