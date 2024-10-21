@@ -9,4 +9,4 @@ class ScholarshipBase(BaseModel):
     requirements: Optional[str] = None
 
     class Config:
-        orm_mode = True  # Enable ORM mode to work with SQLAlchemy models
+        from_attributes = True  # Enable ORM mode to work with SQLAlchemy models
