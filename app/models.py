@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Text, DateTime, Integer
+from sqlalchemy import Column, String, Text, DateTime, Integer, JSON
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
@@ -26,10 +26,10 @@ class Scholarship(Base):
     __tablename__ = 'scholarships'
     id = Column(Integer, primary_key=True, index=True)
     program_title = Column(String(255), nullable=False)
-    funded_by = Column(String(255))
+    funded_by = Column(String(255), nullable=True)
     url = Column(String(500), nullable=False)
-    deadline = Column(DateTime)
-    requirements = Column(Text)
+    deadline = Column(DateTime, nullable=True)
+    requirements = Column(JSON, nullable=True)
 
 # Create all tables
 Base.metadata.create_all(bind=engine)
