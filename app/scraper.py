@@ -1,5 +1,5 @@
-import json
 import time
+from datetime import datetime
 import random
 from requests.exceptions import RequestException
 from scrapegraphai.graphs import SmartScraperGraph
@@ -25,6 +25,14 @@ logging.basicConfig(
     ]
 )
 
+def parse_date(date_str):
+    try:
+        # Parse the string date (e.g., 'October 31, 2024') to datetime object
+        return datetime.strptime(date_str, "%B %d, %Y").date()  # Converts to YYYY-MM-DD format
+    except ValueError as e:
+        logging.error(f"Date parsing error: {e}")
+        return None
+
 def scrape_site(site, db: Session, retries=3):
     """Scrape the given site and save the result to the database."""
     for attempt in range(retries):
@@ -45,7 +53,13 @@ def scrape_site(site, db: Session, retries=3):
 
             # Create the SmartScraperGraph instance
             smart_scraper_graph = SmartScraperGraph(
-                prompt="List me all the master's scholarships available in Canada with their respective Program titles, Managed / Funded by, URLs, deadlines, and requirements. ONLY and ALWAYS reply in the json format { \"program_title\": \"string\", \"funded_by\": \"string\", \"url\": \"string\", \"deadline\": \"string\", \"requirements\": \"string\" }",
+            prompt=(
+                    "List all the master's scholarships available in Canada with their "
+                    "respective Program titles, Managed/Funded by, URLs, deadlines, and requirements. "
+                    "Strictly respond **only** in valid JSON format with the following structure and nothing else: "
+                    "{ \"program_title\": \"string\", \"funded_by\": \"string\", \"url\": \"string\", \"deadline\": \"YYYY-MM-DD\", \"requirements\": \"string\" }. "
+                    "Do not include any extra text, explanations, or comments, just valid JSON."
+                ),
                 source=site,
                 config=graph_config
             )
@@ -55,26 +69,43 @@ def scrape_site(site, db: Session, retries=3):
 
             logging.info(f"Scraped {len(articles_data)} scholarships from {site}")
 
-            # Save the result to the MySQL database
-            for article in articles_data:
-                # Create a new Scholarship entry
-                scholarship = Scholarship(
-                    program_title=article.get('program_title'),
-                    funded_by=article.get('funded_by'),
-                    url=article.get('url'),
-                    deadline=article.get('deadline'),
-                    requirements=article.get('requirements')
-                )
+            logging.info(f"Articles data: {articles_data}")
 
-                # Add the scholarship record to the session
-                db.add(scholarship)
-                logging.info(f"Added scholarship: {scholarship.program_title} from {site}")
+            # Handle case where articles_data is a single dictionary
+            if isinstance(articles_data, dict):
+                # If it's a single dictionary, wrap it in a list
+                articles_data = [articles_data]
 
-            # Commit the transaction to save data in the DB
-            db.commit()
-            
-            logging.info(f"Successfully scraped and saved data from {site}")
-            break  # Break out of the retry loop if successful
+            # Validate articles_data is now a list of dictionaries
+            if isinstance(articles_data, list):
+                # Save the result to the MySQL database
+                for article in articles_data:
+
+                    # Check if the article data is a dictionary
+                    if not isinstance(article, dict):
+                        logging.error(f"Expected a dictionary but got: {article}")
+                        return
+
+                    # Create a new Scholarship entry
+                    scholarship = Scholarship(
+                        program_title=article.get('program_title'),
+                        funded_by=article.get('funded_by'),
+                        url=article.get('url'),
+                        deadline=parse_date(article.get('deadline')),
+                        requirements=article.get('requirements')
+                    )
+
+                    # Add the scholarship record to the session
+                    db.add(scholarship)
+                    logging.info(f"Added scholarship: {scholarship.program_title} from {site}")
+
+                # Commit the transaction to save data in the DB
+                db.commit()
+                
+                logging.info(f"Successfully scraped and saved data from {site}")
+
+            else:
+                logging.error(f"Expected list or dictionary but got: {type(articles_data)}")
 
         except RequestException as e:
             logging.error(f"Request error while scraping {site} on attempt {attempt+1}: {e}")
