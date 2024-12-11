@@ -85,19 +85,25 @@ def scrape_site(site, db: Session, retries=1):
                     if not isinstance(article, dict):
                         logging.error(f"Expected a dictionary but got: {article}")
                         return
+                    
+                    # Check for duplicate scholarships
+                    existing_scholarship = db.query(Scholarship).filter(Scholarship.program_title == article.get('program_title')).first()
+                    if not existing_scholarship:
 
-                    # Create a new Scholarship entry
-                    scholarship = Scholarship(
-                        program_title=article.get('program_title'),
-                        funded_by=article.get('funded_by'),
-                        url=article.get('url'),
-                        deadline=parse_date(article.get('deadline')),
-                        requirements=article.get('requirements')
-                    )
+                        # Create a new Scholarship entry
+                        scholarship = Scholarship(
+                            program_title=article.get('program_title'),
+                            funded_by=article.get('funded_by'),
+                            url=article.get('url'),
+                            deadline=parse_date(article.get('deadline')),
+                            requirements=article.get('requirements')
+                        )
 
-                    # Add the scholarship record to the session
-                    db.add(scholarship)
-                    logging.info(f"Added scholarship: {scholarship.program_title} from {site}")
+                        # Add the scholarship record to the session
+                        db.add(scholarship)
+                        logging.info(f"Added scholarship: {scholarship.program_title} from {site}")
+                    else:
+                        logging.info(f"Scholarship already exists: {existing_scholarship.program_title} from {site}")
 
                 # Commit the transaction to save data in the DB
                 db.commit()
