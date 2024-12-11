@@ -8,6 +8,8 @@ from app.scraper import scrape_site
 from app.models import Scholarship
 from app.schemas import ScholarshipBase
 import logging
+from app.image_generator import generate_image
+import os
 
 app = FastAPI()
 
@@ -67,9 +69,32 @@ def start_scraping(background_tasks: BackgroundTasks):
     background_tasks.add_task(run_scraper)
     return {"message": "Scraping started in the background."}
 
+@app.get("add-books/")
+def add_books(id: int, name: str, author: str):
+    """Add books to the database."""
+    return {"id": id, "name": name, "author": author}
+    
+
+@app.post("/generate-images/")
+def generate_images_for_scholarships(db: Session = Depends(get_db)):
+    """Generate images for scholarships without images."""
+    scholarships = db.query(Scholarship).filter(Scholarship.image_url == None).all()
+    for scholarship in scholarships:
+        prompt = f"An image representing the scholarship titled {scholarship.program_title}"
+        output_path = f"images/{scholarship.id}.png"
+        generate_image(prompt, output_path)
+        scholarship.image_url = output_path
+        db.add(scholarship)
+    
+    db.commit()
+    return {"message": "Images generated for scholarships without images."}
+
+# Ensure the images directory exists
+os.makedirs("images", exist_ok=True)
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
 # Start Uvicorn server
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=5000, reload=True)
