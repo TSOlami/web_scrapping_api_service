@@ -30,6 +30,7 @@ class Scholarship(Base):
     url = Column(String(500), nullable=False)
     deadline = Column(DateTime, nullable=True)
     requirements = Column(JSON, nullable=True)
+    image_url = Column(String(500), nullable=True)
 
 # Create all tables
 Base.metadata.create_all(bind=engine)
