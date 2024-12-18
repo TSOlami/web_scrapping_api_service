@@ -122,8 +122,8 @@ def scrape_site(site, db: Session, retries=1):
             break
 
 
-def fetch_description(url, retries=1):
-    """Fetch the description from the given URL."""
+def fetch_description(url, db, scholarship_id, retries=1):
+    """Fetch the description from the given URL and save it to the database."""
     for attempt in range(retries):
         try:
             logging.info(f"Fetching description from {url} (Attempt {attempt+1})")
@@ -155,10 +155,21 @@ def fetch_description(url, retries=1):
             # Run the pipeline to scrape data
             description_data = smart_scraper_graph.run()
 
-            logging.info(f"Fetched description: {description_data}")
+            # Extract the description
+            description = description_data.get("description", "").strip()
+
+            if description:
+                # Save the description to the database
+                scholarship = db.query(Scholarship).filter(Scholarship.id == scholarship_id).first()
+                if scholarship:
+                    scholarship.description = description
+                    db.commit()
+                    logging.info(f"Description saved for scholarship {scholarship_id}")
 
             return description_data
 
         except RequestException as e:
             logging.error(f"Request error while fetching description from {url} on attempt {attempt+1}: {e}")
             time.sleep(random.uniform(1, 3))
+
+    return None
