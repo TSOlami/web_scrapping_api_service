@@ -120,3 +120,45 @@ def scrape_site(site, db: Session, retries=1):
         except Exception as e:
             logging.error(f"General error occurred while scraping {site}: {e}")
             break
+
+
+def fetch_description(url, retries=1):
+    """Fetch the description from the given URL."""
+    for attempt in range(retries):
+        try:
+            logging.info(f"Fetching description from {url} (Attempt {attempt+1})")
+
+            # Define the configuration for the scraping pipeline
+            graph_config = {
+                "llm": {
+                    "api_key": OPENAI_API_KEY,
+                    "model": "openai/gpt-3.5-turbo",
+                    "temperature": 0,
+                },
+                "verbose": True,
+                "headless": True,
+                "browser_type": "playwright"
+            }
+
+            # Create the SmartScraperGraph instance
+            smart_scraper_graph = SmartScraperGraph(
+                prompt=(
+                    "Extract the description of the scholarship from the given URL. "
+                    "Strictly respond **only** in valid JSON format with the following structure and nothing else: "
+                    "{ \"description\": \"string\" }. "
+                    "Do not include any extra text, explanations, or comments, just valid JSON."
+                ),
+                source=url,
+                config=graph_config
+            )
+
+            # Run the pipeline to scrape data
+            description_data = smart_scraper_graph.run()
+
+            logging.info(f"Fetched description: {description_data}")
+
+            return description_data
+
+        except RequestException as e:
+            logging.error(f"Request error while fetching description from {url} on attempt {attempt+1}: {e}")
+            time.sleep(random.uniform(1, 3))
