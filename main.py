@@ -82,22 +82,16 @@ def start_scraping(background_tasks: BackgroundTasks):
     return {"message": "Scraping started in the background."}
 
 @app.post("/fetch-scholarship/description/")
-async def fetch_scholarship_description(background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
-    """
-    Fetch scholarship descriptions for scholarships missing descriptions in the background.
-    """
+def fetch_scholarship_description(background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
     # Get all scholarships without descriptions
     scholarships = db.query(Scholarship).filter(Scholarship.description == None).all()
     logger.info(f"Found {len(scholarships)} scholarships without descriptions")
-    
-    # Queue the fetch descriptions process
-    urls = [scholarship.url for scholarship in scholarships if scholarship.url]
-    if urls:
-        background_tasks.add_task(run_fetch_description, urls)
-        return {"message": f"Fetching descriptions for {len(urls)} scholarships in the background."}
-    else:
-        return {"message": "No scholarships without descriptions found."}
-    
+
+    # Process each scholarship in the background
+    for scholarship in scholarships:
+        background_tasks.add_task(fetch_description, scholarship.url, db, scholarship.id)
+
+    return {"message": "Fetching descriptions started in the background."}
 
 async def process_image_generation(job_id: str, scholarship_id: int, db: Session):
     logger.info(f"Starting image generation process for job {job_id} (Scholarship {scholarship_id})")
