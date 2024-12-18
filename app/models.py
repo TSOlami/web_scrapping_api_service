@@ -31,6 +31,7 @@ class Scholarship(Base):
     deadline = Column(DateTime, nullable=True)
     requirements = Column(JSON, nullable=True)
     image_url = Column(String(500), nullable=True)
+    description = Column(Text, nullable=True)
 
 # Create all tables
 Base.metadata.create_all(bind=engine)
