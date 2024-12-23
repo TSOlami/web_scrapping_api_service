@@ -4,7 +4,7 @@ from fastapi import FastAPI, Depends, HTTPException, BackgroundTasks
 from sqlalchemy.orm import Session
 from concurrent.futures import ThreadPoolExecutor
 from app.database import get_db
-from app.scraper import scrape_site, scrape_news_site, fetch_description, fetch_body
+from app.scraper import scrape_site, scrape_news_site, fetch_null_fields, fetch_body
 from app.models import Scholarship, News
 from app.schemas import ScholarshipBase, NewsBase
 import logging
@@ -58,7 +58,7 @@ def run_news_scraper():
 def run_fetch_description(url):
     """ Run the scraper to get the descritions. """
     with ThreadPoolExecutor(max_workers=3) as executor:
-        executor.map(lambda site: fetch_description(site), url)
+        executor.map(lambda site: fetch_null_fields(site), url)
 
 @app.get("/")
 def read_root():
@@ -92,21 +92,40 @@ def start_scraping(background_tasks: BackgroundTasks):
     background_tasks.add_task(run_scraper)
     return {"message": "Scraping started for scholarships in the background."}
 
-@app.post("/fetch-scholarship/description/")
-def fetch_scholarship_description(background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
-    # Get all scholarships without descriptions
-    scholarships = db.query(Scholarship).filter(Scholarship.description == None).all()
-    logger.info(f"Found {len(scholarships)} scholarships without descriptions")
+@app.post("/fetch-scholarship/null-fields/")
+def fetch_scholarship_null_fields(background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
+    # Get all scholarships without descriptions, requirements, or degree levels
+    scholarships = db.query(Scholarship).filter(
+        (Scholarship.description == None) | 
+        (Scholarship.requirements == None) | 
+        (Scholarship.degree_level == None)
+    ).all()
+    
+    logger.info(f"Found {len(scholarships)} scholarships with missing fields")
 
     # Process each scholarship in the background
     for scholarship in scholarships:
-        # Check if requirements are null
+        # Build the null_fields list based on missing fields
+        null_fields = []
+        
+        if scholarship.description is None:
+            null_fields.append("description")
         if scholarship.requirements is None:
-            background_tasks.add_task(fetch_description, scholarship.url, db, scholarship.id, is_requirement_null=True)
-        else:
-            background_tasks.add_task(fetch_description, scholarship.url, db, scholarship.id, is_requirement_null=False)
+            null_fields.append("requirements")
+        if scholarship.degree_level is None:
+            null_fields.append("degree_level")
 
-    return {"message": "Fetching descriptions started in the background."}
+        # Call fetch_null_fields with the appropriate null_fields list
+        if null_fields:
+            background_tasks.add_task(
+                fetch_null_fields, 
+                scholarship.url, 
+                db, 
+                scholarship.id, 
+                null_fields
+            )
+
+    return {"message": "Fetching missing fields started in the background."}
 
 async def process_image_generation(job_id: str, type: str, id: int, db: Session):
     """
