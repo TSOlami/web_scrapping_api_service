@@ -1352,3 +1352,288 @@ Trying to resume download...
 2024-12-18 19:23:29,218 - INFO - Content scraped
 2024-12-18 19:23:31,158 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2024-12-18 19:23:31,177 - INFO - Description saved for scholarship 42
+2024-12-23 12:44:44,459 - INFO - Fetching news article 1
+2024-12-23 13:20:39,883 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 13:20:40,136 - INFO - Starting scraping...
+2024-12-23 13:21:03,621 - INFO - Content scraped
+2024-12-23 13:21:32,941 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 13:21:32,966 - INFO - Scraped 6 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 13:21:32,966 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'content': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'Global Affairs Canada', 'url': '/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 13:21:32,970 - INFO - Added news: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 13:21:32,993 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 13:41:20,748 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 13:41:20,991 - INFO - Starting scraping...
+2024-12-23 13:41:35,475 - INFO - Content scraped
+2024-12-23 13:41:43,098 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 13:41:43,139 - INFO - Scraped 6 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 13:41:43,139 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'EduCanada', 'url': '/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 13:41:43,143 - ERROR - General error occurred while scraping https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng: 'content' is an invalid keyword argument for News
+2024-12-23 13:48:56,520 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 13:48:56,749 - INFO - Starting scraping...
+2024-12-23 13:49:09,738 - INFO - Content scraped
+2024-12-23 13:49:17,738 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 13:49:17,782 - INFO - Scraped 6 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 13:49:17,782 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'Global Affairs Canada', 'url': 'https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 13:49:17,787 - INFO - Added news: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 13:49:17,802 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 14:03:36,376 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 14:03:36,619 - INFO - Starting scraping...
+2024-12-23 14:03:38,281 - INFO - Retrying request to /chat/completions in 0.383856 seconds
+2024-12-23 14:03:38,666 - INFO - Retrying request to /chat/completions in 0.915356 seconds
+2024-12-23 14:03:39,594 - ERROR - General error occurred while scraping https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng: Connection error.
+2024-12-23 14:07:22,013 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 14:07:22,075 - INFO - Starting scraping...
+2024-12-23 14:07:36,167 - INFO - Content scraped
+2024-12-23 14:07:43,716 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 14:07:43,770 - INFO - Scraped 6 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 14:07:43,770 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'EduCanada', 'url': 'https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 14:07:43,774 - INFO - Added news: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 14:07:43,783 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 14:30:35,659 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 14:30:35,894 - INFO - Starting scraping...
+2024-12-23 14:30:51,207 - INFO - Content scraped
+2024-12-23 14:30:59,311 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 14:30:59,353 - INFO - Scraped 7 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 14:30:59,354 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'EduCanada', 'url': 'https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa', 'body': 'The Faculty Mobility for Partnership Building Program (FMPBP) is now accepting applications for the 2025-2026 academic year. Canadian postsecondary institutions must apply online on behalf of eligible candidates.'}
+2024-12-23 14:30:59,355 - INFO - Added news: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 14:30:59,364 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 14:33:43,222 - INFO - Found 1 news articles without body
+2024-12-23 14:35:27,517 - INFO - Found 1 news articles without body
+2024-12-23 14:35:27,519 - INFO - Fetching data from https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng (Attempt 1)
+2024-12-23 14:35:27,750 - INFO - Starting scraping...
+2024-12-23 14:35:44,670 - INFO - Content scraped
+2024-12-23 14:35:53,452 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 14:35:53,540 - INFO - Data saved for news article 4
+2024-12-23 14:47:17,076 - INFO - Received request to generate images for scholarships
+2024-12-23 14:47:17,092 - INFO - Found 2 scholarships without images
+2024-12-23 14:47:17,092 - INFO - Created new job 7018ed0a-a504-40d8-ab6d-b1b16fd4fe77 for scholarship 41
+2024-12-23 14:47:17,092 - INFO - Queued job 7018ed0a-a504-40d8-ab6d-b1b16fd4fe77 for scholarship 41
+2024-12-23 14:47:17,092 - INFO - Created new job 5b15c8e0-c379-4834-abca-97050db5d32e for scholarship 42
+2024-12-23 14:47:17,093 - INFO - Queued job 5b15c8e0-c379-4834-abca-97050db5d32e for scholarship 42
+2024-12-23 14:47:17,094 - INFO - Starting image generation process for job 7018ed0a-a504-40d8-ab6d-b1b16fd4fe77 (Scholarship 41)
+2024-12-23 14:47:17,095 - INFO - Updated job 7018ed0a-a504-40d8-ab6d-b1b16fd4fe77 - Status: processing, Error: None, Image: None
+2024-12-23 14:47:17,102 - INFO - Recorded new request. Total requests in last minute: 1
+2024-12-23 14:47:17,102 - INFO - Generating image for scholarship 41
+2024-12-23 14:47:33,256 - INFO - API Response Status: 200
+2024-12-23 14:47:33,391 - INFO - Successfully generated image for scholarship 41
+2024-12-23 14:47:33,392 - INFO - Updated job 7018ed0a-a504-40d8-ab6d-b1b16fd4fe77 - Status: completed, Error: None, Image: /static/images/scholarship_41.png
+2024-12-23 14:47:33,392 - INFO - Starting image generation process for job 5b15c8e0-c379-4834-abca-97050db5d32e (Scholarship 42)
+2024-12-23 14:47:33,392 - INFO - Updated job 5b15c8e0-c379-4834-abca-97050db5d32e - Status: processing, Error: None, Image: None
+2024-12-23 14:47:33,394 - INFO - Recorded new request. Total requests in last minute: 2
+2024-12-23 14:47:33,394 - INFO - Generating image for scholarship 42
+2024-12-23 14:47:37,557 - INFO - API Response Status: 200
+2024-12-23 14:47:37,758 - INFO - Successfully generated image for scholarship 42
+2024-12-23 14:47:37,758 - INFO - Updated job 5b15c8e0-c379-4834-abca-97050db5d32e - Status: completed, Error: None, Image: /static/images/scholarship_42.png
+2024-12-23 14:48:22,698 - INFO - Received request to generate images for news articles
+2024-12-23 14:48:22,703 - INFO - Found 1 news articles without images
+2024-12-23 14:48:22,703 - INFO - Created new job dbd854ad-ebb5-425e-95d3-f3f2294b0498 for scholarship 4
+2024-12-23 14:48:22,704 - INFO - Queued job dbd854ad-ebb5-425e-95d3-f3f2294b0498 for news article 4
+2024-12-23 14:48:22,705 - INFO - Starting image generation process for job dbd854ad-ebb5-425e-95d3-f3f2294b0498 (News 4)
+2024-12-23 14:48:22,706 - INFO - Updated job dbd854ad-ebb5-425e-95d3-f3f2294b0498 - Status: processing, Error: None, Image: None
+2024-12-23 14:48:22,709 - INFO - Recorded new request. Total requests in last minute: 2
+2024-12-23 14:48:22,709 - INFO - Generating image for news 4
+2024-12-23 14:48:29,161 - INFO - API Response Status: 200
+2024-12-23 14:48:29,249 - INFO - Successfully generated image for news 4
+2024-12-23 14:48:29,250 - INFO - Updated job dbd854ad-ebb5-425e-95d3-f3f2294b0498 - Status: completed, Error: None, Image: /static/images/scholarship_4.png
+2024-12-23 15:00:08,255 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 15:00:08,718 - INFO - Starting scraping...
+2024-12-23 15:00:20,404 - INFO - Content scraped
+2024-12-23 15:00:32,882 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 15:00:32,955 - INFO - Scraped 6 scholarships from https://yconic.com
+2024-12-23 15:00:32,955 - INFO - Articles data: [{'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Smart Serve Scholarships', 'funded_by': 'NA', 'url': 'https://studentawards.com/scholarships/smart-serve-cares/', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Embark $15,000 RESP Contest', 'funded_by': 'NA', 'url': 'https://yconic.55rush.com/embarkaward/', 'deadline': '2024-12-31', 'requirements': []}, {'program_title': 'Neo Deposit Days $25,000 Giveaway', 'funded_by': 'NA', 'url': 'https://neodepositdays.55rush.com/?ref=studentawards', 'deadline': '2025-04-30', 'requirements': []}, {'program_title': 'BMO Student Award', 'funded_by': 'NA', 'url': 'https://studentawards.com/scholarships/bmo-student-award/', 'deadline': '2025-01-31', 'requirements': []}, {'program_title': 'LEO Your Voice Counts Scholarship', 'funded_by': 'NA', 'url': 'https://yconic.55rush.com/leostudentaward', 'deadline': '2024-12-31', 'requirements': []}]
+2024-12-23 15:00:32,961 - INFO - Added scholarship: Beem Credit Union Million Dollar Bursary Program from https://yconic.com
+2024-12-23 15:00:32,963 - INFO - Added scholarship: Smart Serve Scholarships from https://yconic.com
+2024-12-23 15:00:32,965 - INFO - Added scholarship: Embark $15,000 RESP Contest from https://yconic.com
+2024-12-23 15:00:32,966 - INFO - Added scholarship: Neo Deposit Days $25,000 Giveaway from https://yconic.com
+2024-12-23 15:00:32,968 - INFO - Added scholarship: BMO Student Award from https://yconic.com
+2024-12-23 15:00:32,969 - INFO - Added scholarship: LEO Your Voice Counts Scholarship from https://yconic.com
+2024-12-23 15:00:32,977 - INFO - Successfully scraped and saved data from https://yconic.com
+2024-12-23 15:05:55,929 - INFO - Received request to generate images for scholarships
+2024-12-23 15:05:55,932 - INFO - Found 6 scholarships without images
+2024-12-23 15:05:55,932 - INFO - Created new job 99afc634-c52e-4b54-aa21-a4d9b6e02f84 for scholarship 43
+2024-12-23 15:05:55,933 - INFO - Queued job 99afc634-c52e-4b54-aa21-a4d9b6e02f84 for scholarship 43
+2024-12-23 15:05:55,933 - INFO - Created new job e6057852-c72e-4df9-8660-3b5c47633414 for scholarship 44
+2024-12-23 15:05:55,933 - INFO - Queued job e6057852-c72e-4df9-8660-3b5c47633414 for scholarship 44
+2024-12-23 15:05:55,933 - INFO - Created new job 68122c6e-94c6-4bfb-9ec3-a3b013965429 for scholarship 45
+2024-12-23 15:05:55,933 - INFO - Queued job 68122c6e-94c6-4bfb-9ec3-a3b013965429 for scholarship 45
+2024-12-23 15:05:55,933 - INFO - Created new job c74fe726-3c34-416c-8100-ecc7be3ebb60 for scholarship 46
+2024-12-23 15:05:55,933 - INFO - Queued job c74fe726-3c34-416c-8100-ecc7be3ebb60 for scholarship 46
+2024-12-23 15:05:55,934 - INFO - Created new job 44a16508-49b1-4701-a1b8-7bd8903341f5 for scholarship 47
+2024-12-23 15:05:55,934 - INFO - Queued job 44a16508-49b1-4701-a1b8-7bd8903341f5 for scholarship 47
+2024-12-23 15:05:55,934 - INFO - Created new job 00855e6c-8c34-428a-b918-8a7695b4349a for scholarship 48
+2024-12-23 15:05:55,934 - INFO - Queued job 00855e6c-8c34-428a-b918-8a7695b4349a for scholarship 48
+2024-12-23 15:05:55,936 - INFO - Starting image generation process for job 99afc634-c52e-4b54-aa21-a4d9b6e02f84 (Scholarship 43)
+2024-12-23 15:05:55,936 - INFO - Updated job 99afc634-c52e-4b54-aa21-a4d9b6e02f84 - Status: processing, Error: None, Image: None
+2024-12-23 15:05:55,938 - INFO - Recorded new request. Total requests in last minute: 1
+2024-12-23 15:05:55,939 - INFO - Generating image for scholarship 43
+2024-12-23 15:06:07,304 - INFO - API Response Status: 200
+2024-12-23 15:06:07,435 - INFO - Successfully generated image for scholarship 43
+2024-12-23 15:06:07,435 - INFO - Updated job 99afc634-c52e-4b54-aa21-a4d9b6e02f84 - Status: completed, Error: None, Image: /static/images/scholarship_43.png
+2024-12-23 15:06:07,435 - INFO - Starting image generation process for job e6057852-c72e-4df9-8660-3b5c47633414 (Scholarship 44)
+2024-12-23 15:06:07,435 - INFO - Updated job e6057852-c72e-4df9-8660-3b5c47633414 - Status: processing, Error: None, Image: None
+2024-12-23 15:06:07,437 - INFO - Recorded new request. Total requests in last minute: 2
+2024-12-23 15:06:07,437 - INFO - Generating image for scholarship 44
+2024-12-23 15:06:08,428 - INFO - API Response Status: 200
+2024-12-23 15:06:08,587 - INFO - Successfully generated image for scholarship 44
+2024-12-23 15:06:08,587 - INFO - Updated job e6057852-c72e-4df9-8660-3b5c47633414 - Status: completed, Error: None, Image: /static/images/scholarship_44.png
+2024-12-23 15:06:08,588 - INFO - Starting image generation process for job 68122c6e-94c6-4bfb-9ec3-a3b013965429 (Scholarship 45)
+2024-12-23 15:06:08,588 - INFO - Updated job 68122c6e-94c6-4bfb-9ec3-a3b013965429 - Status: processing, Error: None, Image: None
+2024-12-23 15:06:08,589 - INFO - Recorded new request. Total requests in last minute: 3
+2024-12-23 15:06:08,589 - INFO - Generating image for scholarship 45
+2024-12-23 15:06:10,647 - INFO - API Response Status: 503
+2024-12-23 15:06:10,648 - ERROR - API Error Response: {"error":"Model CompVis/stable-diffusion-v1-4 is currently loading","estimated_time":466.3940124511719}
+2024-12-23 15:06:10,648 - ERROR - Error generating image for scholarship 45: Error generating image: {"error":"Model CompVis/stable-diffusion-v1-4 is currently loading","estimated_time":466.3940124511719}
+2024-12-23 15:06:10,649 - ERROR - Job 68122c6e-94c6-4bfb-9ec3-a3b013965429 failed: Error generating image: {"error":"Model CompVis/stable-diffusion-v1-4 is currently loading","estimated_time":466.3940124511719}
+2024-12-23 15:06:10,649 - INFO - Updated job 68122c6e-94c6-4bfb-9ec3-a3b013965429 - Status: failed, Error: Error generating image: {"error":"Model CompVis/stable-diffusion-v1-4 is currently loading","estimated_time":466.3940124511719}, Image: None
+2024-12-23 15:06:10,650 - INFO - Starting image generation process for job c74fe726-3c34-416c-8100-ecc7be3ebb60 (Scholarship 46)
+2024-12-23 15:06:10,651 - INFO - Updated job c74fe726-3c34-416c-8100-ecc7be3ebb60 - Status: processing, Error: None, Image: None
+2024-12-23 15:06:10,656 - INFO - Rate limit reached. Waiting 45.28 seconds before next request
+2024-12-23 15:06:56,939 - INFO - Recorded new request. Total requests in last minute: 3
+2024-12-23 15:06:56,940 - INFO - Generating image for scholarship 46
+2024-12-23 15:06:57,751 - INFO - API Response Status: 429
+2024-12-23 15:06:57,751 - ERROR - Error generating image for scholarship 46: Max requests total reached
+2024-12-23 15:06:57,751 - ERROR - Job c74fe726-3c34-416c-8100-ecc7be3ebb60 failed: Max requests total reached
+2024-12-23 15:06:57,751 - INFO - Updated job c74fe726-3c34-416c-8100-ecc7be3ebb60 - Status: failed, Error: Max requests total reached, Image: None
+2024-12-23 15:06:57,751 - INFO - Starting image generation process for job 44a16508-49b1-4701-a1b8-7bd8903341f5 (Scholarship 47)
+2024-12-23 15:06:57,751 - INFO - Updated job 44a16508-49b1-4701-a1b8-7bd8903341f5 - Status: processing, Error: None, Image: None
+2024-12-23 15:06:57,754 - INFO - Rate limit reached. Waiting 9.68 seconds before next request
+2024-12-23 15:07:08,438 - INFO - Recorded new request. Total requests in last minute: 3
+2024-12-23 15:07:08,439 - INFO - Generating image for scholarship 47
+2024-12-23 15:07:23,329 - INFO - API Response Status: 500
+2024-12-23 15:07:23,329 - ERROR - API Error Response: {"error":"unknown error","warnings":["CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 14.75 GiB total capacity; 2.69 GiB already allocated; 117.06 MiB free; 2.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF","There was an inference error: CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 14.75 GiB total capacity; 2.69 GiB already allocated; 117.06 MiB free; 2.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF"]}
+2024-12-23 15:07:23,330 - ERROR - Error generating image for scholarship 47: Error generating image: {"error":"unknown error","warnings":["CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 14.75 GiB total capacity; 2.69 GiB already allocated; 117.06 MiB free; 2.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF","There was an inference error: CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 14.75 GiB total capacity; 2.69 GiB already allocated; 117.06 MiB free; 2.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF"]}
+2024-12-23 15:07:23,330 - ERROR - Job 44a16508-49b1-4701-a1b8-7bd8903341f5 failed: Error generating image: {"error":"unknown error","warnings":["CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 14.75 GiB total capacity; 2.69 GiB already allocated; 117.06 MiB free; 2.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF","There was an inference error: CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 14.75 GiB total capacity; 2.69 GiB already allocated; 117.06 MiB free; 2.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF"]}
+2024-12-23 15:07:23,330 - INFO - Updated job 44a16508-49b1-4701-a1b8-7bd8903341f5 - Status: failed, Error: Error generating image: {"error":"unknown error","warnings":["CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 14.75 GiB total capacity; 2.69 GiB already allocated; 117.06 MiB free; 2.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF","There was an inference error: CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 14.75 GiB total capacity; 2.69 GiB already allocated; 117.06 MiB free; 2.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF"]}, Image: None
+2024-12-23 15:07:23,331 - INFO - Starting image generation process for job 00855e6c-8c34-428a-b918-8a7695b4349a (Scholarship 48)
+2024-12-23 15:07:23,331 - INFO - Updated job 00855e6c-8c34-428a-b918-8a7695b4349a - Status: processing, Error: None, Image: None
+2024-12-23 15:07:23,335 - INFO - Recorded new request. Total requests in last minute: 3
+2024-12-23 15:07:23,335 - INFO - Generating image for scholarship 48
+2024-12-23 15:07:27,553 - INFO - API Response Status: 200
+2024-12-23 15:07:27,650 - INFO - Successfully generated image for scholarship 48
+2024-12-23 15:07:27,651 - INFO - Updated job 00855e6c-8c34-428a-b918-8a7695b4349a - Status: completed, Error: None, Image: /static/images/scholarship_48.png
+2024-12-23 16:01:03,492 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 16:01:03,747 - INFO - Starting scraping...
+2024-12-23 16:01:15,720 - INFO - Content scraped
+2024-12-23 16:01:23,419 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 16:01:23,465 - INFO - Scraped 6 scholarships from https://yconic.com
+2024-12-23 16:01:23,465 - INFO - Articles data: {'program_title': 'NA', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'NA', 'deadline': 'NA', 'requirements': ['NA']}
+2024-12-23 16:01:23,477 - ERROR - Date parsing error: time data 'NA' does not match format '%Y-%m-%d'
+2024-12-23 16:01:23,478 - INFO - Added scholarship: NA from https://yconic.com
+2024-12-23 16:01:23,481 - ERROR - General error occurred while scraping https://yconic.com: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: INSERT INTO scholarships (program_title, funded_by, url, deadline, requirements, image_url, description, degree_level) VALUES (%(program_title)s, %(funded_by)s, %(url)s, %(deadline)s, %(requirements)s, %(image_url)s, %(description)s, %(degree_level)s)]
+[parameters: {'program_title': 'NA', 'funded_by': 'NA', 'url': 'NA', 'deadline': None, 'requirements': '["NA"]', 'image_url': None, 'description': None, 'degree_level': 'NA'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-12-23 17:10:30,905 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 17:10:31,211 - INFO - Starting scraping...
+2024-12-23 17:10:57,922 - INFO - Content scraped
+2024-12-23 17:11:11,404 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:11:11,473 - INFO - Scraped 6 scholarships from https://yconic.com
+2024-12-23 17:11:11,476 - INFO - Articles data: {'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': '2025-02-28', 'requirements': []}
+2024-12-23 17:11:11,499 - INFO - Added scholarship: Beem Credit Union Million Dollar Bursary Program from https://yconic.com
+2024-12-23 17:11:11,517 - ERROR - General error occurred while scraping https://yconic.com: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: INSERT INTO scholarships (program_title, funded_by, url, deadline, requirements, image_url, description, degree_level) VALUES (%(program_title)s, %(funded_by)s, %(url)s, %(deadline)s, %(requirements)s, %(image_url)s, %(description)s, %(degree_level)s)]
+[parameters: {'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': datetime.date(2025, 2, 28), 'requirements': '[]', 'image_url': None, 'description': None, 'degree_level': 'NA'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-12-23 17:14:17,860 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 17:14:18,120 - INFO - Starting scraping...
+2024-12-23 17:14:29,101 - INFO - Content scraped
+2024-12-23 17:14:50,991 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:14:51,062 - INFO - Scraped 6 scholarships from https://yconic.com
+2024-12-23 17:14:51,062 - INFO - Articles data: [{'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Smart Serve Scholarships', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/smart-serve-cares/', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Embark $15,000 RESP Contest', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/embarkaward/', 'deadline': '2024-12-31', 'requirements': []}, {'program_title': 'Neo Deposit Days $25,000 Giveaway', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://neodepositdays.55rush.com/?ref=studentawards', 'deadline': '2025-04-30', 'requirements': []}, {'program_title': 'BMO Student Award', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/bmo-student-award/', 'deadline': '2025-01-31', 'requirements': []}, {'program_title': 'LEO Your Voice Counts Scholarship', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/leostudentaward', 'deadline': '2024-12-31', 'requirements': []}]
+2024-12-23 17:14:51,105 - INFO - Added scholarship: Beem Credit Union Million Dollar Bursary Program from https://yconic.com
+2024-12-23 17:14:51,110 - INFO - Added scholarship: Smart Serve Scholarships from https://yconic.com
+2024-12-23 17:14:51,115 - INFO - Added scholarship: Embark $15,000 RESP Contest from https://yconic.com
+2024-12-23 17:14:51,119 - INFO - Added scholarship: Neo Deposit Days $25,000 Giveaway from https://yconic.com
+2024-12-23 17:14:51,124 - INFO - Added scholarship: BMO Student Award from https://yconic.com
+2024-12-23 17:14:51,127 - INFO - Added scholarship: LEO Your Voice Counts Scholarship from https://yconic.com
+2024-12-23 17:14:51,135 - ERROR - General error occurred while scraping https://yconic.com: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: INSERT INTO scholarships (program_title, funded_by, url, deadline, requirements, image_url, description, degree_level) VALUES (%(program_title)s, %(funded_by)s, %(url)s, %(deadline)s, %(requirements)s, %(image_url)s, %(description)s, %(degree_level)s)]
+[parameters: {'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': datetime.date(2025, 2, 28), 'requirements': '[]', 'image_url': None, 'description': None, 'degree_level': 'NA'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-12-23 17:16:25,028 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 17:16:25,075 - INFO - Starting scraping...
+2024-12-23 17:16:47,917 - INFO - Content scraped
+2024-12-23 17:16:50,905 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:16:50,917 - INFO - Scraped 6 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:16:50,917 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'EduCanada', 'url': 'https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 17:16:50,919 - INFO - Added news: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:16:50,939 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:24:48,082 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 17:24:48,505 - INFO - Starting scraping...
+2024-12-23 17:25:01,591 - INFO - Content scraped
+2024-12-23 17:25:12,332 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:25:12,377 - INFO - Scraped 6 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:25:12,377 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'Global Affairs Canada', 'url': 'https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 17:25:12,380 - INFO - Added news: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:25:12,387 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:26:22,909 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 17:26:23,226 - INFO - Starting scraping...
+2024-12-23 17:26:38,076 - INFO - Content scraped
+2024-12-23 17:26:44,694 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:26:44,760 - INFO - Scraped 6 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:26:44,760 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'EduCanada', 'url': 'https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 17:26:44,763 - INFO - Added news: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:26:44,773 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:28:47,549 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 17:28:47,886 - INFO - Starting scraping...
+2024-12-23 17:29:02,656 - INFO - Content scraped
+2024-12-23 17:29:08,556 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:29:08,616 - INFO - Scraped 6 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:29:08,616 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'EduCanada', 'url': 'https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 17:29:08,621 - INFO - Added news: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:29:08,630 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:30:12,122 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 17:30:12,468 - INFO - Starting scraping...
+2024-12-23 17:30:50,663 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:30:50,709 - INFO - Scraped 6 scholarships from https://yconic.com
+2024-12-23 17:30:50,716 - INFO - Articles data: {'program_title': 'NA', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'NA', 'deadline': 'NA', 'requirements': ['NA']}
+2024-12-23 17:30:50,748 - ERROR - Date parsing error: time data 'NA' does not match format '%Y-%m-%d'
+2024-12-23 17:30:50,750 - INFO - Added scholarship: NA from https://yconic.com
+2024-12-23 17:30:50,760 - ERROR - General error occurred while scraping https://yconic.com: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: INSERT INTO scholarships (program_title, funded_by, url, deadline, requirements, image_url, description, degree_level) VALUES (%(program_title)s, %(funded_by)s, %(url)s, %(deadline)s, %(requirements)s, %(image_url)s, %(description)s, %(degree_level)s)]
+[parameters: {'program_title': 'NA', 'funded_by': 'NA', 'url': 'NA', 'deadline': None, 'requirements': '["NA"]', 'image_url': None, 'description': None, 'degree_level': 'NA'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-12-23 17:35:54,262 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 17:35:54,495 - INFO - Starting scraping...
+2024-12-23 17:36:13,384 - INFO - Content scraped
+2024-12-23 17:36:25,037 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:36:25,098 - INFO - Scraped 6 news articles from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:36:25,099 - INFO - Articles data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'EduCanada', 'url': 'https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 17:36:25,103 - INFO - News already exists: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:36:25,104 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:39:52,700 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 17:39:52,943 - INFO - Starting scraping...
+2024-12-23 17:40:05,877 - INFO - Content scraped
+2024-12-23 17:40:16,334 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:40:16,378 - INFO - Scraped data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'EduCanada', 'url': 'https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'visa'}
+2024-12-23 17:40:16,392 - INFO - News already exists: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:40:16,393 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:42:43,285 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-23 17:42:43,656 - INFO - Starting scraping...
+2024-12-23 17:43:11,591 - INFO - Content scraped
+2024-12-23 17:43:23,336 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:43:23,400 - INFO - Scraped data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'NA', 'url': '/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'NA'}
+2024-12-23 17:43:23,409 - INFO - News already exists: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:43:23,409 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-23 17:44:02,241 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 17:44:02,287 - INFO - Starting scraping...
+2024-12-23 17:44:13,322 - INFO - Content scraped
+2024-12-23 17:44:19,158 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 17:44:19,220 - INFO - Scraped 6 scholarships from https://yconic.com
+2024-12-23 17:44:19,220 - INFO - Articles data: [{'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Smart Serve Scholarships', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/smart-serve-cares/', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Embark $15,000 RESP Contest', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/embarkaward/', 'deadline': '2024-12-31', 'requirements': []}, {'program_title': 'Neo Deposit Days $25,000 Giveaway', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://neodepositdays.55rush.com/?ref=studentawards', 'deadline': '2025-04-30', 'requirements': []}, {'program_title': 'BMO Student Award', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/bmo-student-award/', 'deadline': '2025-01-31', 'requirements': []}, {'program_title': 'LEO Your Voice Counts Scholarship', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/leostudentaward', 'deadline': '2024-12-31', 'requirements': []}]
+2024-12-23 17:44:19,231 - INFO - Added scholarship: Beem Credit Union Million Dollar Bursary Program from https://yconic.com
+2024-12-23 17:44:19,234 - INFO - Added scholarship: Smart Serve Scholarships from https://yconic.com
+2024-12-23 17:44:19,240 - INFO - Added scholarship: Embark $15,000 RESP Contest from https://yconic.com
+2024-12-23 17:44:19,242 - INFO - Added scholarship: Neo Deposit Days $25,000 Giveaway from https://yconic.com
+2024-12-23 17:44:19,244 - INFO - Added scholarship: BMO Student Award from https://yconic.com
+2024-12-23 17:44:19,246 - INFO - Added scholarship: LEO Your Voice Counts Scholarship from https://yconic.com
+2024-12-23 17:44:19,251 - ERROR - General error occurred while scraping https://yconic.com: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: INSERT INTO scholarships (program_title, funded_by, url, deadline, requirements, image_url, description, degree_level) VALUES (%(program_title)s, %(funded_by)s, %(url)s, %(deadline)s, %(requirements)s, %(image_url)s, %(description)s, %(degree_level)s)]
+[parameters: {'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': datetime.date(2025, 2, 28), 'requirements': '[]', 'image_url': None, 'description': None, 'degree_level': 'NA'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-12-23 17:58:14,079 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 17:58:14,339 - INFO - Starting scraping...
+2024-12-23 17:58:26,093 - INFO - Content scraped
+2024-12-23 18:02:29,436 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 18:02:29,697 - INFO - Starting scraping...
+2024-12-23 18:02:35,529 - INFO - Content scraped
