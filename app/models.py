@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Text, DateTime, Integer, JSON
+from sqlalchemy import Column, String, Text, DateTime, Integer, JSON, Enum
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
@@ -32,6 +32,21 @@ class Scholarship(Base):
     requirements = Column(JSON, nullable=True)
     image_url = Column(String(500), nullable=True)
     description = Column(Text, nullable=True)
+    degree_level = Column(Enum('bachelors', 'masters', 'doctorate', name='degree_level'), default='bachelor', nullable=True)
+
+
+# Define the News table
+class News(Base):
+    __tablename__ = 'news'
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String(255), nullable=False)
+    description = Column(Text, nullable=True)
+    body = Column(Text, nullable=True)
+    published_at = Column(DateTime, nullable=True)
+    image_url = Column(String(500), nullable=True)
+    source = Column(String(255), nullable=True)
+    url = Column(String(500), nullable=True)
+    category = Column(Enum('visa', 'blog', name='news_category'), nullable=False)
 
 # Create all tables
 Base.metadata.create_all(bind=engine)
