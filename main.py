@@ -105,6 +105,11 @@ def fetch_scholarship_null_fields(background_tasks: BackgroundTasks, db: Session
 
     # Process each scholarship in the background
     for scholarship in scholarships:
+        # Check if the number of times updated is greater than 3
+        if scholarship.times_updated and scholarship.times_updated > 2:
+            logger.info(f"Skipping scholarship {scholarship.id} due to too many updates")
+            continue
+    
         # Build the null_fields list based on missing fields
         null_fields = []
         
@@ -262,7 +267,13 @@ async def remove_outdated_scholarships(db: Session = Depends(get_db)):
     scholarships = db.query(Scholarship).all()
     for scholarship in scholarships:
         if scholarship.deadline and scholarship.deadline < datetime.now():
+            # Check if the scholarship has an image and delete it
+            if scholarship.image_url:
+                image_path = os.path.join("static", scholarship.image_url)
+                if os.path.exists(image_path):
+                    os.remove(image_path)
             db.delete(scholarship)
+
     db.commit()
     return {"message": "Outdated scholarships removed successfully"}
 
@@ -298,9 +309,73 @@ def fetch_news_body(background_tasks: BackgroundTasks, db: Session = Depends(get
 
     # Process each news article in the background
     for article in news:
+        # Check if the number of times updated is greater than 2
+        if article.times_updated and article.times_updated > 2:
+            logger.info(f"Skipping news article {article.id} due to too many updates")
+            continue
         background_tasks.add_task(fetch_body, article.url, db, article.id)
 
     return {"message": "Fetching news body started in the background."}
+
+
+@app.delete('/scholarships/')
+async def delete_scholarships(db: Session = Depends(get_db)):
+    """Delete all scholarships."""
+    scholarships = db.query(Scholarship).all()
+    for scholarship in scholarships:
+        # Check if the scholarship has an image and delete it
+        if scholarship.image_url:
+            image_path = os.path.join("static", scholarship.image_url)
+            if os.path.exists(image_path):
+                os.remove(image_path)
+        db.delete(scholarship)
+    db.commit()
+    return {"message": "All scholarships deleted successfully."}
+
+
+@app.delete('/scholarships/{scholarship_id}')
+async def delete_scholarship(scholarship_id: int, db: Session = Depends(get_db)):
+    """Delete a scholarship by ID."""
+    scholarship = db.query(Scholarship).filter(Scholarship.id == scholarship_id).first()
+    if not scholarship:
+        raise HTTPException(status_code=404, detail="Scholarship not found")
+    if scholarship.image_url:
+        image_path = os.path.join("static", scholarship.image_url)
+        if os.path.exists(image_path):
+            os.remove(image_path)
+    db.delete(scholarship)
+    db.commit()
+    return {"message": "Scholarship deleted successfully."}
+
+
+@app.delete('/news/')
+async def delete_news(db: Session = Depends(get_db)):
+    """Delete all news articles."""
+    news = db.query(News).all()
+    for article in news:
+        # Check if the news article has an image and delete it
+        if article.image_url:
+            image_path = os.path.join("static", article.image_url)
+            if os.path.exists(image_path):
+                os.remove(image_path)
+        db.delete(article)
+    db.commit()
+    return {"message": "All news articles deleted successfully."}
+
+
+@app.delete('/news/{news_id}')
+async def delete_news_article(news_id: int, db: Session = Depends(get_db)):
+    """Delete a news article by ID."""
+    news = db.query(News).filter(News.id == news_id).first()
+    if not news:
+        raise HTTPException(status_code=404, detail="News article not found")
+    if news.image_url:
+        image_path = os.path.join("static", news.image_url)
+        if os.path.exists(image_path):
+            os.remove(image_path)
+    db.delete(news)
+    db.commit()
+    return {"message": "News article deleted successfully."}
 
 
 # Ensure the images directory exists
