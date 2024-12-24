@@ -1637,3 +1637,271 @@ Trying to resume download...
 2024-12-23 18:02:29,436 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
 2024-12-23 18:02:29,697 - INFO - Starting scraping...
 2024-12-23 18:02:35,529 - INFO - Content scraped
+2024-12-23 18:28:35,428 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 18:28:35,719 - INFO - Starting scraping...
+2024-12-23 18:28:46,519 - INFO - Content scraped
+2024-12-23 18:29:27,522 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 18:29:27,684 - INFO - Raw scraped data: [{'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'Beem Credit Union', 'degree_level': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Smart Serve Scholarships', 'funded_by': 'Smart Serve Ontario', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/smart-serve-cares/', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Embark $15,000 RESP Contest', 'funded_by': 'Embark', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/embarkaward/', 'deadline': '2024-12-31', 'requirements': []}, {'program_title': 'Neo Deposit Days $25,000 Giveaway', 'funded_by': 'Neo Financial', 'degree_level': 'NA', 'url': 'https://neodepositdays.55rush.com/?ref=studentawards', 'deadline': '2025-04-30', 'requirements': []}, {'program_title': 'BMO Student Award', 'funded_by': 'BMO', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/bmo-student-award/', 'deadline': '2025-01-31', 'requirements': []}, {'program_title': 'LEO Your Voice Counts Scholarship', 'funded_by': 'LEO - powered by Leger', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/leostudentaward', 'deadline': '2024-12-31', 'requirements': []}]
+2024-12-23 18:29:27,684 - INFO - Normalized scholarships data: [{'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'Beem Credit Union', 'degree_level': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Smart Serve Scholarships', 'funded_by': 'Smart Serve Ontario', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/smart-serve-cares/', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Embark $15,000 RESP Contest', 'funded_by': 'Embark', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/embarkaward/', 'deadline': '2024-12-31', 'requirements': []}, {'program_title': 'Neo Deposit Days $25,000 Giveaway', 'funded_by': 'Neo Financial', 'degree_level': 'NA', 'url': 'https://neodepositdays.55rush.com/?ref=studentawards', 'deadline': '2025-04-30', 'requirements': []}, {'program_title': 'BMO Student Award', 'funded_by': 'BMO', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/bmo-student-award/', 'deadline': '2025-01-31', 'requirements': []}, {'program_title': 'LEO Your Voice Counts Scholarship', 'funded_by': 'LEO - powered by Leger', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/leostudentaward', 'deadline': '2024-12-31', 'requirements': []}]
+2024-12-23 18:29:27,696 - INFO - Added scholarship: Beem Credit Union Million Dollar Bursary Program from https://yconic.com
+2024-12-23 18:29:27,699 - INFO - Added scholarship: Smart Serve Scholarships from https://yconic.com
+2024-12-23 18:29:27,700 - INFO - Added scholarship: Embark $15,000 RESP Contest from https://yconic.com
+2024-12-23 18:29:27,702 - INFO - Added scholarship: Neo Deposit Days $25,000 Giveaway from https://yconic.com
+2024-12-23 18:29:27,704 - INFO - Added scholarship: BMO Student Award from https://yconic.com
+2024-12-23 18:29:27,706 - INFO - Added scholarship: LEO Your Voice Counts Scholarship from https://yconic.com
+2024-12-23 18:29:27,711 - ERROR - General error occurred while scraping https://yconic.com: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: INSERT INTO scholarships (program_title, funded_by, url, deadline, requirements, image_url, description, degree_level) VALUES (%(program_title)s, %(funded_by)s, %(url)s, %(deadline)s, %(requirements)s, %(image_url)s, %(description)s, %(degree_level)s)]
+[parameters: {'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'Beem Credit Union', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': datetime.date(2025, 2, 28), 'requirements': '[]', 'image_url': None, 'description': None, 'degree_level': 'NA'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-12-23 18:52:21,706 - INFO - Starting scraping process for https://yconic.com (Attempt 1)
+2024-12-23 18:52:21,923 - INFO - Starting scraping...
+2024-12-23 18:52:36,764 - INFO - Content scraped
+2024-12-23 18:52:52,113 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-23 18:52:52,177 - INFO - Raw scraped data: [{'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Smart Serve Scholarships', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/smart-serve-cares/', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Embark $15,000 RESP Contest', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/embarkaward/', 'deadline': '2024-12-31', 'requirements': []}, {'program_title': 'Neo Deposit Days $25,000 Giveaway', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://neodepositdays.55rush.com/?ref=studentawards', 'deadline': '2025-04-30', 'requirements': []}, {'program_title': 'BMO Student Award', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/bmo-student-award/', 'deadline': '2025-01-31', 'requirements': []}, {'program_title': 'LEO Your Voice Counts Scholarship', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/leostudentaward', 'deadline': '2024-12-31', 'requirements': []}]
+2024-12-23 18:52:52,177 - INFO - Normalized scholarships data: [{'program_title': 'Beem Credit Union Million Dollar Bursary Program', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Smart Serve Scholarships', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/smart-serve-cares/', 'deadline': '2025-02-28', 'requirements': []}, {'program_title': 'Embark $15,000 RESP Contest', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/embarkaward/', 'deadline': '2024-12-31', 'requirements': []}, {'program_title': 'Neo Deposit Days $25,000 Giveaway', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://neodepositdays.55rush.com/?ref=studentawards', 'deadline': '2025-04-30', 'requirements': []}, {'program_title': 'BMO Student Award', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://studentawards.com/scholarships/bmo-student-award/', 'deadline': '2025-01-31', 'requirements': []}, {'program_title': 'LEO Your Voice Counts Scholarship', 'funded_by': 'NA', 'degree_level': 'NA', 'url': 'https://yconic.55rush.com/leostudentaward', 'deadline': '2024-12-31', 'requirements': []}]
+2024-12-23 18:52:52,186 - WARNING - Invalid degree_level value 'NA' for scholarship Beem Credit Union Million Dollar Bursary Program
+2024-12-23 18:52:52,187 - INFO - Added scholarship: Beem Credit Union Million Dollar Bursary Program from https://yconic.com
+2024-12-23 18:52:52,188 - WARNING - Invalid degree_level value 'NA' for scholarship Smart Serve Scholarships
+2024-12-23 18:52:52,189 - INFO - Added scholarship: Smart Serve Scholarships from https://yconic.com
+2024-12-23 18:52:52,190 - WARNING - Invalid degree_level value 'NA' for scholarship Embark $15,000 RESP Contest
+2024-12-23 18:52:52,191 - INFO - Added scholarship: Embark $15,000 RESP Contest from https://yconic.com
+2024-12-23 18:52:52,192 - WARNING - Invalid degree_level value 'NA' for scholarship Neo Deposit Days $25,000 Giveaway
+2024-12-23 18:52:52,192 - INFO - Added scholarship: Neo Deposit Days $25,000 Giveaway from https://yconic.com
+2024-12-23 18:52:52,194 - WARNING - Invalid degree_level value 'NA' for scholarship BMO Student Award
+2024-12-23 18:52:52,194 - INFO - Added scholarship: BMO Student Award from https://yconic.com
+2024-12-23 18:52:52,196 - WARNING - Invalid degree_level value 'NA' for scholarship LEO Your Voice Counts Scholarship
+2024-12-23 18:52:52,196 - INFO - Added scholarship: LEO Your Voice Counts Scholarship from https://yconic.com
+2024-12-23 18:52:52,205 - INFO - Successfully scraped and saved data from https://yconic.com
+2024-12-23 18:54:07,459 - INFO - Found 6 scholarships without descriptions
+2024-12-23 18:54:07,461 - INFO - Fetching data from https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary (Attempt 1)
+2024-12-23 18:54:07,508 - INFO - Starting scraping...
+2024-12-23 18:54:19,961 - ERROR - Unexpected error fetching data from https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary: invalid state
+2024-12-23 18:54:19,961 - ERROR - Failed to fetch data from https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary after 1 attempts
+2024-12-23 18:54:19,962 - INFO - Fetching data from https://studentawards.com/scholarships/smart-serve-cares/ (Attempt 1)
+2024-12-23 18:54:19,991 - INFO - Starting scraping...
+2024-12-23 18:54:28,956 - INFO - Content scraped
+2024-12-24 11:47:17,682 - INFO - Received request to generate images for scholarships
+2024-12-24 11:47:17,694 - INFO - Found 6 scholarships without images
+2024-12-24 11:47:17,694 - INFO - Created new job 4da09a99-603b-4874-9681-c3bf1686ca04 for scholarship 49
+2024-12-24 11:47:17,695 - INFO - Queued job 4da09a99-603b-4874-9681-c3bf1686ca04 for scholarship 49
+2024-12-24 11:47:17,695 - INFO - Created new job 439d397d-ec56-4883-9c25-da73c8274aef for scholarship 50
+2024-12-24 11:47:17,695 - INFO - Queued job 439d397d-ec56-4883-9c25-da73c8274aef for scholarship 50
+2024-12-24 11:47:17,695 - INFO - Created new job 835d5af7-f2b2-4e1d-986b-788972b60852 for scholarship 51
+2024-12-24 11:47:17,695 - INFO - Queued job 835d5af7-f2b2-4e1d-986b-788972b60852 for scholarship 51
+2024-12-24 11:47:17,695 - INFO - Created new job 3f549fc9-651e-4fb5-9345-c324d0384270 for scholarship 52
+2024-12-24 11:47:17,695 - INFO - Queued job 3f549fc9-651e-4fb5-9345-c324d0384270 for scholarship 52
+2024-12-24 11:47:17,695 - INFO - Created new job 5c9fe0fd-d8dd-4379-a589-18aebd6217f9 for scholarship 53
+2024-12-24 11:47:17,696 - INFO - Queued job 5c9fe0fd-d8dd-4379-a589-18aebd6217f9 for scholarship 53
+2024-12-24 11:47:17,696 - INFO - Created new job 3c775374-ebfd-4f59-aa43-e29423639895 for scholarship 54
+2024-12-24 11:47:17,696 - INFO - Queued job 3c775374-ebfd-4f59-aa43-e29423639895 for scholarship 54
+2024-12-24 11:47:17,697 - INFO - Starting image generation process for job 4da09a99-603b-4874-9681-c3bf1686ca04 (Scholarship 49)
+2024-12-24 11:47:17,697 - INFO - Updated job 4da09a99-603b-4874-9681-c3bf1686ca04 - Status: processing, Error: None, Image: None
+2024-12-24 11:47:17,702 - INFO - Recorded new request. Total requests in last minute: 1
+2024-12-24 11:47:17,702 - INFO - Generating image for scholarship 49
+2024-12-24 11:47:26,220 - INFO - API Response Status: 200
+2024-12-24 11:47:26,371 - INFO - Successfully generated image for scholarship 49
+2024-12-24 11:47:26,371 - INFO - Updated job 4da09a99-603b-4874-9681-c3bf1686ca04 - Status: completed, Error: None, Image: /static/images/scholarship_49.png
+2024-12-24 11:47:26,372 - INFO - Starting image generation process for job 439d397d-ec56-4883-9c25-da73c8274aef (Scholarship 50)
+2024-12-24 11:47:26,372 - INFO - Updated job 439d397d-ec56-4883-9c25-da73c8274aef - Status: processing, Error: None, Image: None
+2024-12-24 11:47:26,373 - INFO - Recorded new request. Total requests in last minute: 2
+2024-12-24 11:47:26,373 - INFO - Generating image for scholarship 50
+2024-12-24 11:47:30,414 - INFO - API Response Status: 200
+2024-12-24 11:47:30,564 - INFO - Successfully generated image for scholarship 50
+2024-12-24 11:47:30,565 - INFO - Updated job 439d397d-ec56-4883-9c25-da73c8274aef - Status: completed, Error: None, Image: /static/images/scholarship_50.png
+2024-12-24 11:47:30,565 - INFO - Starting image generation process for job 835d5af7-f2b2-4e1d-986b-788972b60852 (Scholarship 51)
+2024-12-24 11:47:30,565 - INFO - Updated job 835d5af7-f2b2-4e1d-986b-788972b60852 - Status: processing, Error: None, Image: None
+2024-12-24 11:47:30,566 - INFO - Recorded new request. Total requests in last minute: 3
+2024-12-24 11:47:30,566 - INFO - Generating image for scholarship 51
+2024-12-24 11:47:34,915 - INFO - API Response Status: 200
+2024-12-24 11:47:35,029 - INFO - Successfully generated image for scholarship 51
+2024-12-24 11:47:35,029 - INFO - Updated job 835d5af7-f2b2-4e1d-986b-788972b60852 - Status: completed, Error: None, Image: /static/images/scholarship_51.png
+2024-12-24 11:47:35,030 - INFO - Starting image generation process for job 3f549fc9-651e-4fb5-9345-c324d0384270 (Scholarship 52)
+2024-12-24 11:47:35,030 - INFO - Updated job 3f549fc9-651e-4fb5-9345-c324d0384270 - Status: processing, Error: None, Image: None
+2024-12-24 11:47:35,032 - INFO - Rate limit reached. Waiting 42.67 seconds before next request
+2024-12-24 11:48:18,703 - INFO - Recorded new request. Total requests in last minute: 3
+2024-12-24 11:48:18,703 - INFO - Generating image for scholarship 52
+2024-12-24 11:48:19,643 - INFO - API Response Status: 429
+2024-12-24 11:48:19,643 - ERROR - Error generating image for scholarship 52: Max requests total reached
+2024-12-24 11:48:19,643 - ERROR - Job 3f549fc9-651e-4fb5-9345-c324d0384270 failed: Max requests total reached
+2024-12-24 11:48:19,643 - INFO - Updated job 3f549fc9-651e-4fb5-9345-c324d0384270 - Status: failed, Error: Max requests total reached, Image: None
+2024-12-24 11:48:19,644 - INFO - Starting image generation process for job 5c9fe0fd-d8dd-4379-a589-18aebd6217f9 (Scholarship 53)
+2024-12-24 11:48:19,644 - INFO - Updated job 5c9fe0fd-d8dd-4379-a589-18aebd6217f9 - Status: processing, Error: None, Image: None
+2024-12-24 11:48:19,646 - INFO - Rate limit reached. Waiting 6.73 seconds before next request
+2024-12-24 11:48:27,374 - INFO - Recorded new request. Total requests in last minute: 3
+2024-12-24 11:48:27,375 - INFO - Generating image for scholarship 53
+2024-12-24 11:48:34,075 - INFO - API Response Status: 200
+2024-12-24 11:48:34,163 - INFO - Successfully generated image for scholarship 53
+2024-12-24 11:48:34,163 - INFO - Updated job 5c9fe0fd-d8dd-4379-a589-18aebd6217f9 - Status: completed, Error: None, Image: /static/images/scholarship_53.png
+2024-12-24 11:48:34,163 - INFO - Starting image generation process for job 3c775374-ebfd-4f59-aa43-e29423639895 (Scholarship 54)
+2024-12-24 11:48:34,163 - INFO - Updated job 3c775374-ebfd-4f59-aa43-e29423639895 - Status: processing, Error: None, Image: None
+2024-12-24 11:48:34,165 - INFO - Recorded new request. Total requests in last minute: 3
+2024-12-24 11:48:34,165 - INFO - Generating image for scholarship 54
+2024-12-24 11:48:42,162 - INFO - API Response Status: 200
+2024-12-24 11:48:42,254 - INFO - Successfully generated image for scholarship 54
+2024-12-24 11:48:42,254 - INFO - Updated job 3c775374-ebfd-4f59-aa43-e29423639895 - Status: completed, Error: None, Image: /static/images/scholarship_54.png
+2024-12-24 11:56:28,770 - INFO - Found 6 scholarships with missing fields
+2024-12-24 11:56:28,772 - INFO - Fetching data from https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary (Attempt 1)
+2024-12-24 11:56:29,050 - INFO - Starting scraping...
+2024-12-24 11:56:42,502 - INFO - Content scraped
+2024-12-24 11:56:57,882 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 11:56:57,921 - INFO - Data saved for scholarship 49
+2024-12-24 11:56:57,922 - INFO - Fetching data from https://studentawards.com/scholarships/smart-serve-cares/ (Attempt 1)
+2024-12-24 11:56:57,953 - INFO - Starting scraping...
+2024-12-24 11:57:05,346 - INFO - Content scraped
+2024-12-24 11:57:07,198 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 11:57:07,222 - INFO - Data saved for scholarship 50
+2024-12-24 11:57:07,223 - INFO - Fetching data from https://yconic.55rush.com/embarkaward/ (Attempt 1)
+2024-12-24 11:57:07,265 - INFO - Starting scraping...
+2024-12-24 11:57:14,576 - INFO - Content scraped
+2024-12-24 11:57:15,596 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 11:57:15,619 - INFO - Data saved for scholarship 51
+2024-12-24 11:57:15,621 - INFO - Fetching data from https://neodepositdays.55rush.com/?ref=studentawards (Attempt 1)
+2024-12-24 11:57:15,682 - INFO - Starting scraping...
+2024-12-24 11:57:22,126 - INFO - Content scraped
+2024-12-24 11:57:23,481 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 11:57:23,508 - INFO - Data saved for scholarship 52
+2024-12-24 11:57:23,510 - INFO - Fetching data from https://studentawards.com/scholarships/bmo-student-award/ (Attempt 1)
+2024-12-24 11:57:23,553 - INFO - Starting scraping...
+2024-12-24 11:57:28,079 - INFO - Content scraped
+2024-12-24 11:57:30,155 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 11:57:30,167 - INFO - Data saved for scholarship 53
+2024-12-24 11:57:30,167 - INFO - Fetching data from https://yconic.55rush.com/leostudentaward (Attempt 1)
+2024-12-24 11:57:30,199 - INFO - Starting scraping...
+2024-12-24 11:57:32,120 - INFO - Content scraped
+2024-12-24 11:57:33,307 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 11:57:33,323 - INFO - Data saved for scholarship 54
+2024-12-24 12:03:58,556 - INFO - Database connection successful
+2024-12-24 12:03:58,557 - INFO - Database connection closed
+2024-12-24 12:11:05,587 - INFO - Found 6 scholarships with missing fields
+2024-12-24 12:11:05,588 - INFO - Database connection successful
+2024-12-24 12:11:05,589 - INFO - Database connection closed
+2024-12-24 12:11:05,590 - INFO - Fetching degree_level data from https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:11:05,834 - INFO - Starting scraping...
+2024-12-24 12:11:12,996 - INFO - Content scraped
+2024-12-24 12:11:15,090 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:11:15,140 - INFO - Data saved for scholarship 49
+2024-12-24 12:11:15,140 - INFO - Fetching degree_level data from https://studentawards.com/scholarships/smart-serve-cares/ with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:11:15,181 - INFO - Starting scraping...
+2024-12-24 12:11:22,035 - INFO - Content scraped
+2024-12-24 12:11:23,140 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:11:23,155 - ERROR - Unexpected error fetching data from https://studentawards.com/scholarships/smart-serve-cares/: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: UPDATE scholarships SET degree_level=%(degree_level)s WHERE scholarships.id = %(scholarships_id)s]
+[parameters: {'degree_level': 'bachelor', 'scholarships_id': 50}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-12-24 12:11:23,155 - ERROR - Failed to fetch data from https://studentawards.com/scholarships/smart-serve-cares/ after 1 attempts
+2024-12-24 12:11:23,156 - INFO - Fetching degree_level data from https://yconic.55rush.com/embarkaward/ with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:11:23,202 - INFO - Starting scraping...
+2024-12-24 12:11:33,666 - INFO - Content scraped
+2024-12-24 12:11:35,259 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:11:35,270 - ERROR - Unexpected error fetching data from https://yconic.55rush.com/embarkaward/: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: UPDATE scholarships SET degree_level=%(degree_level)s WHERE scholarships.id = %(scholarships_id)s]
+[parameters: {'degree_level': 'bachelor', 'scholarships_id': 50}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-24 12:11:35,271 - ERROR - Failed to fetch data from https://yconic.55rush.com/embarkaward/ after 1 attempts
+2024-12-24 12:11:35,273 - INFO - Fetching degree_level data from https://neodepositdays.55rush.com/?ref=studentawards with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:11:35,324 - INFO - Starting scraping...
+2024-12-24 12:11:43,354 - INFO - Content scraped
+2024-12-24 12:11:44,372 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:11:44,383 - ERROR - Unexpected error fetching data from https://neodepositdays.55rush.com/?ref=studentawards: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: UPDATE scholarships SET degree_level=%(degree_level)s WHERE scholarships.id = %(scholarships_id)s]
+[parameters: {'degree_level': 'bachelor', 'scholarships_id': 50}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-24 12:11:44,383 - ERROR - Failed to fetch data from https://neodepositdays.55rush.com/?ref=studentawards after 1 attempts
+2024-12-24 12:11:44,385 - INFO - Fetching degree_level data from https://studentawards.com/scholarships/bmo-student-award/ with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:11:44,432 - INFO - Starting scraping...
+2024-12-24 12:11:48,872 - INFO - Content scraped
+2024-12-24 12:11:49,901 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:11:49,906 - ERROR - Unexpected error fetching data from https://studentawards.com/scholarships/bmo-student-award/: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: UPDATE scholarships SET degree_level=%(degree_level)s WHERE scholarships.id = %(scholarships_id)s]
+[parameters: {'degree_level': 'bachelor', 'scholarships_id': 50}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-24 12:11:49,907 - ERROR - Failed to fetch data from https://studentawards.com/scholarships/bmo-student-award/ after 1 attempts
+2024-12-24 12:11:49,907 - INFO - Fetching degree_level data from https://yconic.55rush.com/leostudentaward with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:11:49,950 - INFO - Starting scraping...
+2024-12-24 12:11:51,809 - INFO - Content scraped
+2024-12-24 12:11:52,871 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:11:52,876 - ERROR - Unexpected error fetching data from https://yconic.55rush.com/leostudentaward: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.DataError) (1265, "Data truncated for column 'degree_level' at row 1")
+[SQL: UPDATE scholarships SET degree_level=%(degree_level)s WHERE scholarships.id = %(scholarships_id)s]
+[parameters: {'degree_level': 'bachelor', 'scholarships_id': 50}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-24 12:11:52,876 - ERROR - Failed to fetch data from https://yconic.55rush.com/leostudentaward after 1 attempts
+2024-12-24 12:16:29,250 - INFO - Found 6 scholarships with missing fields
+2024-12-24 12:16:29,251 - INFO - Database connection successful
+2024-12-24 12:16:29,252 - INFO - Database connection closed
+2024-12-24 12:16:29,253 - INFO - Fetching degree_level data from https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:16:29,476 - INFO - Starting scraping...
+2024-12-24 12:16:40,104 - INFO - Content scraped
+2024-12-24 12:16:42,597 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:16:42,649 - INFO - Data saved for scholarship 49
+2024-12-24 12:16:42,650 - INFO - Fetching degree_level data from https://studentawards.com/scholarships/smart-serve-cares/ with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:16:42,685 - INFO - Starting scraping...
+2024-12-24 12:16:49,362 - INFO - Content scraped
+2024-12-24 12:16:50,734 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:16:50,765 - INFO - Data saved for scholarship 50
+2024-12-24 12:16:50,766 - INFO - Fetching degree_level data from https://yconic.55rush.com/embarkaward/ with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:16:50,805 - INFO - Starting scraping...
+2024-12-24 12:16:52,775 - INFO - Content scraped
+2024-12-24 12:16:54,019 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:16:54,031 - INFO - Data saved for scholarship 51
+2024-12-24 12:16:54,032 - INFO - Fetching degree_level data from https://neodepositdays.55rush.com/?ref=studentawards with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:16:54,071 - INFO - Starting scraping...
+2024-12-24 12:16:58,485 - INFO - Content scraped
+2024-12-24 12:16:59,435 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:16:59,457 - INFO - Data saved for scholarship 52
+2024-12-24 12:16:59,459 - INFO - Fetching degree_level data from https://studentawards.com/scholarships/bmo-student-award/ with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:16:59,500 - INFO - Starting scraping...
+2024-12-24 12:17:03,370 - INFO - Content scraped
+2024-12-24 12:17:04,465 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:17:04,474 - INFO - Data saved for scholarship 53
+2024-12-24 12:17:04,475 - INFO - Fetching degree_level data from https://yconic.55rush.com/leostudentaward with the prompt: Extract the degree_level of the scholarship from the given URL. Strictly respond **only** in valid JSON format with the following structure and nothing else: {"degree_level": "string"}. If the degree level is not explicitly mentioned, try to infer it from the description or context. If inference is not possible, default to 'bachelor'. Do not include any extra text, explanations, or comments, just valid JSON., (Attempt 1)
+2024-12-24 12:17:04,513 - INFO - Starting scraping...
+2024-12-24 12:17:06,487 - INFO - Content scraped
+2024-12-24 12:17:07,846 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:17:07,860 - INFO - Data saved for scholarship 54
+2024-12-24 12:17:51,818 - INFO - Database connection successful
+2024-12-24 12:17:51,819 - INFO - Database connection closed
+2024-12-24 12:17:57,199 - INFO - Database connection successful
+2024-12-24 12:17:57,200 - INFO - Database connection closed
+2024-12-24 12:18:52,433 - INFO - Found 2 scholarships with missing fields
+2024-12-24 12:18:52,434 - INFO - Database connection successful
+2024-12-24 12:18:52,435 - INFO - Database connection closed
+2024-12-24 12:18:52,436 - INFO - Fetching degree_level data from https://www.interiorsavings.com/about-us/community/bursary-programs?utm_source=Google&utm;_medium=55rush&utm;_campaign=Bursary (Attempt 1)
+2024-12-24 12:18:52,670 - INFO - Starting scraping...
+2024-12-24 12:19:05,593 - INFO - Content scraped
+2024-12-24 12:19:09,494 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:19:09,522 - INFO - Data saved for scholarship 49
+2024-12-24 12:19:09,523 - INFO - Fetching degree_level data from https://studentawards.com/scholarships/bmo-student-award/ (Attempt 1)
+2024-12-24 12:19:09,555 - INFO - Starting scraping...
+2024-12-24 12:19:16,445 - INFO - Content scraped
+2024-12-24 12:19:17,683 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:19:17,688 - INFO - Data saved for scholarship 53
+2024-12-24 12:20:29,020 - INFO - Database connection successful
+2024-12-24 12:20:29,021 - INFO - Database connection closed
+2024-12-24 12:22:05,666 - INFO - Database connection closed
+2024-12-24 12:22:05,667 - INFO - Starting scraping process for https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng (Attempt 1)
+2024-12-24 12:22:05,706 - INFO - Starting scraping...
+2024-12-24 12:22:15,564 - INFO - Content scraped
+2024-12-24 12:22:26,299 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:22:26,319 - INFO - Scraped data: {'title': 'Deadline approaching: Faculty Mobility for Partnership Building Program', 'description': 'Canadian institutions have until November 19, 2024 to submit applications on behalf of Canadian faculty.', 'published_at': '2024-11-04', 'source': 'Global Affairs Canada', 'url': '/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng', 'category': 'Scholarships'}
+2024-12-24 12:22:26,325 - INFO - News already exists: Deadline approaching: Faculty Mobility for Partnership Building Program from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-24 12:22:26,325 - INFO - Successfully scraped and saved data from https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng
+2024-12-24 12:25:28,072 - INFO - Found 1 news articles without body
+2024-12-24 12:25:28,073 - INFO - Database connection successful
+2024-12-24 12:25:28,074 - INFO - Fetching data from https://www.educanada.ca/scholarships-bourses/news-nouvelles/2024/2024-11-04.aspx?lang=eng (Attempt 1)
+2024-12-24 12:25:28,324 - INFO - Starting scraping...
+2024-12-24 12:25:42,704 - INFO - Content scraped
+2024-12-24 12:25:48,023 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-24 12:25:48,084 - INFO - Data saved for news article 8
+2024-12-24 12:26:27,031 - INFO - Received request to generate images for news articles
+2024-12-24 12:26:27,033 - INFO - Found 1 news articles without images
+2024-12-24 12:26:27,034 - INFO - Created new job d4b4e53a-906c-49c4-863d-dca48fca5fce for scholarship 8
+2024-12-24 12:26:27,034 - INFO - Queued job d4b4e53a-906c-49c4-863d-dca48fca5fce for news article 8
+2024-12-24 12:26:27,034 - INFO - Database connection successful
+2024-12-24 12:26:27,035 - INFO - Starting image generation process for job d4b4e53a-906c-49c4-863d-dca48fca5fce (News 8)
+2024-12-24 12:26:27,036 - INFO - Updated job d4b4e53a-906c-49c4-863d-dca48fca5fce - Status: processing, Error: None, Image: None
+2024-12-24 12:26:27,038 - INFO - Recorded new request. Total requests in last minute: 1
+2024-12-24 12:26:27,038 - INFO - Generating image for news 8
+2024-12-24 12:26:44,342 - INFO - API Response Status: 200
+2024-12-24 12:26:44,464 - INFO - Successfully generated image for news 8
+2024-12-24 12:26:44,464 - INFO - Updated job d4b4e53a-906c-49c4-863d-dca48fca5fce - Status: completed, Error: None, Image: /static/images/scholarship_8.png
+2024-12-24 12:28:18,442 - INFO - Database connection successful
