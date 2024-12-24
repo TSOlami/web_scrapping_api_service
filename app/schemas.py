@@ -12,6 +12,7 @@ class ScholarshipBase(BaseModel):
     image_url: Optional[str] = None
     description: Optional[str] = None
     degree_level: Optional[str] = None
+    times_updated: Optional[int] = 0
 
     class Config:
         from_attributes = True
@@ -27,6 +28,7 @@ class NewsBase(BaseModel):
     source: Optional[str] = None
     url: Optional[str] = None
     category: str
+    times_updated: Optional[int] = 0
 
     class Config:
         from_attributes = True
