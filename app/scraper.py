@@ -43,7 +43,7 @@ def scrape_site(site, db: Session, retries=1):
             graph_config = {
                 "llm": {
                     "api_key": OPENAI_API_KEY,
-                    "model": "openai/gpt-3.5-turbo",
+                    "model": "openai/gpt-4o",
                     "temperature": 0,
                 },
                 "verbose": True,
@@ -100,11 +100,18 @@ def scrape_site(site, db: Session, retries=1):
                 ).first()
 
                 if not existing_scholarship:
+                    degree_level = scholarship.get('degree_level', None)  # If degree_level is missing or empty, set it to None
+
+                    # Ensure 'degree_level' is valid before inserting
+                    if degree_level not in ['bachelor', 'master', 'doctorate', None]:  # Accept 'None' as a valid value
+                        logging.warning(f"Invalid degree_level value '{degree_level}' for scholarship {scholarship.get('program_title')}")
+                        degree_level = None  # Set to None if invalid
+
                     # Create a new Scholarship entry
                     new_scholarship = Scholarship(
                         program_title=scholarship.get('program_title'),
                         funded_by=scholarship.get('funded_by'),
-                        degree_level=scholarship.get('degree_level'),
+                        degree_level=degree_level,
                         url=scholarship.get('url'),
                         deadline=parse_date(scholarship.get('deadline')),
                         requirements=scholarship.get('requirements')
@@ -207,9 +214,9 @@ def scrape_news_site(site, db: Session, retries=1):
             logging.error(f"General error occurred while scraping {site}: {e}")
             break
 
-def fetch_description(url, db, scholarship_id, is_requirement_null=False, is_degree_level_null=False, retries=1):
+def fetch_null_fields(url, db, scholarship_id, null_fields, retries=1):
     """
-    Fetch the description (and optionally requirements or degree level) from the given URL and save it to the database.
+    Fetch the specified null fields from the given URL and save them to the database.
     """
     for attempt in range(retries):
         try:
@@ -225,58 +232,74 @@ def fetch_description(url, db, scholarship_id, is_requirement_null=False, is_deg
                 "browser_type": "playwright",
             }
 
-            # Adjust prompt based on the flags
-            if is_requirement_null and is_degree_level_null:
-                prompt = (
-                    "Extract the description, requirements, and degree level of the scholarship from the given URL. "
-                    "Strictly respond **only** in valid JSON format with the following structure and nothing else: "
-                    "{ \"description\": \"string\", \"requirements\": [\"string1\", \"string2\", ...], \"degree_level\": \"string\" }. "
-                    "Degree level must be 'bachelor', 'master', or 'doctorate'. If not specified, leave it as null. "
-                    "Do not include any extra text, explanations, or comments, just valid JSON."
-                )
-            elif is_requirement_null:
-                prompt = (
-                    "Extract the description and requirements of the scholarship from the given URL. "
-                    "Strictly respond **only** in valid JSON format with the following structure and nothing else: "
-                    "{ \"description\": \"string\", \"requirements\": [\"string1\", \"string2\", ...] }. "
-                    "Do not include any extra text, explanations, or comments, just valid JSON."
-                )
-            elif is_degree_level_null:
-                prompt = (
-                    "Extract the description and degree level of the scholarship from the given URL. "
-                    "Strictly respond **only** in valid JSON format with the following structure and nothing else: "
-                    "{ \"description\": \"string\", \"degree_level\": \"string\" }. "
-                    "Degree level must be 'bachelor', 'master', or 'doctorate'. If not specified, leave it as null. "
-                    "Do not include any extra text, explanations, or comments, just valid JSON."
-                )
-            else:
-                prompt = (
-                    "Extract the description of the scholarship from the given URL. "
-                    "Strictly respond **only** in valid JSON format with the following structure and nothing else: "
-                    "{ \"description\": \"string\" }. "
-                    "Do not include any extra text, explanations, or comments, just valid JSON."
+            # Construct prompt based on null_fields list
+            prompt_base = "Extract the "
+            fields_to_extract = []
+
+            if "description" in null_fields:
+                fields_to_extract.append("description")
+            if "requirements" in null_fields:
+                fields_to_extract.append("requirements")
+            if "degree_level" in null_fields:
+                fields_to_extract.append("degree_level")
+
+            # Build the prompt dynamically
+            prompt = (
+                f"{prompt_base}{', '.join(fields_to_extract)} of the scholarship from the given URL. "
+                "Strictly respond **only** in valid JSON format with the following structure and nothing else: {"
+            )
+
+            # Add JSON structure to the prompt
+            prompt_structure = []
+            if "description" in fields_to_extract:
+                prompt_structure.append('"description": "string"')
+            if "requirements" in fields_to_extract:
+                prompt_structure.append('"requirements": ["string1", "string2", ...]')
+            if "degree_level" in fields_to_extract:
+                prompt_structure.append('"degree_level": "string"')
+
+            prompt += ", ".join(prompt_structure) + "}. "
+
+            # Add hint for inferring degree_level
+            if "degree_level" in null_fields:
+                prompt += (
+                    "If the degree level is not explicitly mentioned, "
+                    "try to infer it from the description or context. "
+                    "If inference is not possible, default to 'bachelor'. "
                 )
 
-            logging.info(f"Fetching data from {url} (Attempt {attempt + 1})")
+            prompt += "Do not include any extra text, explanations, or comments, just valid JSON."
+
+            logging.info(f"Fetching {', '.join(fields_to_extract)} data from {url} (Attempt {attempt + 1})")
 
             # Create and run the SmartScraperGraph instance
             smart_scraper_graph = SmartScraperGraph(prompt=prompt, source=url, config=graph_config)
             description_data = smart_scraper_graph.run()
 
             # Extract data
-            description = description_data.get("description", "").strip()
-            requirements = description_data.get("requirements", []) if is_requirement_null else None
-            degree_level = description_data.get("degree_level") if is_degree_level_null else None
+            description = description_data.get("description", "").strip() if "description" in fields_to_extract else None
+            requirements = description_data.get("requirements", []) if "requirements" in fields_to_extract else None
+            degree_level = description_data.get("degree_level") if "degree_level" in fields_to_extract else None
+
+            # Fallback to default "bachelor" if degree_level is null
+            if "degree_level" in null_fields and not degree_level:
+                degree_level = "bachelor"
+                logging.info(f"Defaulted degree_level to 'bachelor' for scholarship {scholarship_id}")
 
             if description or requirements or degree_level:
                 # Save data to the database
                 scholarship = db.query(Scholarship).filter(Scholarship.id == scholarship_id).first()
                 if scholarship:
-                    scholarship.description = description
+                    if description:
+                        scholarship.description = description
                     if requirements is not None:
                         scholarship.requirements = requirements
                     if degree_level in ['bachelor', 'master', 'doctorate']:
                         scholarship.degree_level = degree_level  # Update only valid degree levels
+
+                    # Increment the 'times_updated' field
+                    scholarship.times_updated += 1
+
                     db.commit()
                     logging.info(f"Data saved for scholarship {scholarship_id}")
 
@@ -331,6 +354,10 @@ def fetch_body(url, db, news_id, retries=1):
                 news = db.query(News).filter(News.id == news_id).first()
                 if news:
                     news.body = body
+
+                    # Increment the 'times_updated' field
+                    news.times_updated += 1
+                    
                     db.commit()
                     logging.info(f"Data saved for news article {news_id}")
 
