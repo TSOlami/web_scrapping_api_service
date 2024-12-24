@@ -32,7 +32,8 @@ class Scholarship(Base):
     requirements = Column(JSON, nullable=True)
     image_url = Column(String(500), nullable=True)
     description = Column(Text, nullable=True)
-    degree_level = Column(Enum('bachelors', 'masters', 'doctorate', name='degree_level'), default='bachelor', nullable=True)
+    degree_level = Column(Enum('bachelor', 'master', 'doctorate', name='degree_level'), nullable=True)
+    times_updated = Column(Integer, nullable=True, default=0)
 
 
 # Define the News table
@@ -47,6 +48,7 @@ class News(Base):
     source = Column(String(255), nullable=True)
     url = Column(String(500), nullable=True)
     category = Column(Enum('visa', 'blog', name='news_category'), nullable=False)
+    times_updated = Column(Integer, nullable=True, default=0)
 
 # Create all tables
 Base.metadata.create_all(bind=engine)
